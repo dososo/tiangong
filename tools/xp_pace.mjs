@@ -1,0 +1,15 @@
+// How the explorer paces itself on displays of different rates. The display is simulated: requestAnimationFrame is replaced by a clock of the
+// wanted rate (ideal time stamps), because a headless browser has no such screen. node tools/xp_pace.mjs [page] [out.json]
+import { open, pageSha } from './harness.mjs';
+import fs from 'node:fs';
+import path from 'node:path';
+const [,, pg = 'delivery/tiangong_explore.html', outf = 'evidence/explore_pace.json'] = process.argv; const out = []; const ok = (name, pass, info) => { out.push({ name, pass: !!pass, info }); console.log((pass ? 'PASS ' : 'FAIL ') + name + (info !== undefined ? '  ' + JSON.stringify(info) : '')); };
+for (const [hz, want] of [[60, 1], [75, 1], [90, 1], [120, 2], [144, 2], [240, 4]]) {
+  const h = await open(pg + '?sc=0', { w: 480, h: 300, log: false, init: (ms) => { window.__ms = ms; let t = 0, q = []; const real = window.setTimeout.bind(window); window.requestAnimationFrame = (f) => { q.push(f); return q.length; }; window.cancelAnimationFrame = () => {}; window.__beats = 0; const go = () => { t += window.__ms; window.__beats++; const l = q; q = []; for (const f of l) f(t); real(go, 0); }; real(go, 30); }, initArg: 1000 / hz });
+  const { page } = h; await page.waitForFunction(() => window.tg && tg.rt, null, { timeout: 180000 }); await page.waitForTimeout(1500);
+  const r = await page.evaluate(async () => { let n = 0; const f = tg.rt.frame.bind(tg.rt); tg.rt.frame = (...a) => { n++; return f(...a); }; const b0 = window.__beats; await new Promise(r => { const w = () => window.__beats - b0 >= 120 ? r() : setTimeout(w, 20); w(); }); const b = window.__beats - b0; return { pace: tg.pace(), beats: b, frames: n }; });
+  ok(hz + ' Hz display: every ' + want + (want > 1 ? ' beats' : ' beat') + ' one frame', r.pace.stride === want && Math.abs(r.frames - r.beats / want) <= 2, { ...r, fps: Math.round(hz / r.pace.stride) });
+  if (hz === 120) { await page.evaluate(() => { window.__ms = 1000 / 60; }); const b0 = await page.evaluate(() => window.__beats); await page.waitForFunction((b) => window.__beats - b > 200, b0, { timeout: 120000 }); const p = await page.evaluate(() => tg.pace()); ok('moved from a 120 Hz to a 60 Hz screen: back to every beat', p.stride === 1, p); await page.evaluate(() => { window.__ms = 1000 / 120; }); const b1 = await page.evaluate(() => window.__beats); await page.waitForFunction((b) => window.__beats - b > 200, b1, { timeout: 120000 }); const p2 = await page.evaluate(() => tg.pace()); ok('and back to 120 Hz: every second beat', p2.stride === 2, p2); }
+  await h.close();
+}
+const res = { schema_version: 1, page: pg, sha256: pageSha(pg), time: new Date().toISOString(), simulated_display: true, passed: out.filter(x => x.pass).length, total: out.length, checks: out }; fs.mkdirSync(path.dirname(outf), { recursive: true }); fs.writeFileSync(outf + '.tmp', JSON.stringify(res, null, 1)); fs.renameSync(outf + '.tmp', outf); console.log(res.passed + '/' + res.total); process.exit(res.passed === res.total ? 0 : 1);

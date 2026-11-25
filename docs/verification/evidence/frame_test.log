@@ -1,0 +1,14 @@
+PASS page builds inside the frame ""
+PASS the frame is opaque (no storage, null origin) ""
+PASS own fonts load ""
+PASS enter ""
+PASS sound runs after the click "running"
+PASS a place can be chosen with the mouse "D"
+PASS a still finishes ""
+PASS save is offered by the host ""
+PASS the picture reaches the host as a PNG {"filename":"天宫-未时.png","bytes":1488840,"head":[137,80,78,71,13,10,26,10]}
+PASS back to the walk ""
+PASS the page does not scroll ""
+PASS nothing was refused by the content policy []
+PASS no script errors []
+13/13

@@ -1,0 +1,16 @@
+{
+  "name": "tiangong",
+  "version": "1.0.0",
+  "private": true,
+  "description": "天宫 The Celestial Palace: a 168-second film and a palace you can walk into, drawn by code",
+  "type": "module",
+  "license": "Apache-2.0",
+  "homepage": "https://dososo.github.io/tiangong/",
+  "repository": { "type": "git", "url": "git+https://github.com/dososo/tiangong.git" },
+  "scripts": {
+    "serve": "node tools/site_serve.mjs . 8791",
+    "check": "node tools/site_check.mjs",
+    "render": "node build_film/tools/render.mjs --w 3840 --h 2160 --spp 24 --dir out/film4k"
+  },
+  "devDependencies": { "playwright": "1.58.0" }
+}

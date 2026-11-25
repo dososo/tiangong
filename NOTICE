@@ -1,0 +1,25 @@
+天宫 · The Celestial Palace
+Copyright 2026 BLCaptain
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+It includes or is made with the third-party works below. Full list, with what was read to verify each: CREDITS.md
+
+1. Samples under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+   Heard in the score: media/*.mp4 and the release files tiangong_4k.mp4, tiangong_1080p.mp4, tiangong-web-1080p.mp4, tiangong_score.m4a.
+   The guqin is also heard in the roaming page: roam/index.html, src/explore/ambient.js.
+
+   古琴 Guqin: GuqinSonGest, Han Han, Zenodo, DOI 10.5281/zenodo.14962054, CC BY 4.0. Cut, retuned, played anew.
+   琵琶 Pipa: PipaSet v1, Yuancheng Wang, Yuyang Jing, Wei Wei, Dorian Cazau, Olivier Adam, Qiao Wang, Zenodo, DOI 10.5281/zenodo.6760047, CC BY 4.0. Cut, played anew.
+   京剧锣鼓 Beijing Opera percussion: Mi Tian, Ajay Srinivasamurthy, Mark Sandler, Xavier Serra (played by Ying Wan), Zenodo, DOI 10.5281/zenodo.1285212, CC BY 4.0 (the archive itself says CC BY 3.0). Cut, played anew.
+   大锣 Tam-tam: pjcohen, Freesound 413613 and 413614, CC BY 4.0. Cut, played anew.
+
+   None of the authors endorses this work.
+
+2. Samples under other licenses
+   MuseScore_General (choir layer): MIT, licenses/MIT_MuseScore_General.md
+   VSCO-2-CE (timpani, brass, strings, harp): CC0 1.0, licenses/CC0-1.0_VSCO-2-CE.txt
+   古筝 Guzheng: Pufermufin, Freesound 396868, CC0 1.0
+
+3. Fonts under the SIL Open Font License 1.1 (subsets)
+   Noto Serif SC: src/fonts/title-serif-200.woff2, src/fonts/cap-serif-400.woff2, src/explore/ui-serif-400.woff2, media/fonts/serif-200.woff2, media/fonts/serif-400.woff2, and the copies inside src/fonts/fonts.js, src/explore/uifont.js, roam/index.html. licenses/OFL-1.1_NotoSerifSC.txt
+   霞鹜文楷 LXGW WenKai: src/fonts/plaque-kai.woff2 and the copies inside src/fonts/fonts.js, roam/index.html. licenses/OFL-1.1_LXGWWenKai.txt

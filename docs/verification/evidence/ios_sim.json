@@ -1,0 +1,152 @@
+{
+ "schema_version": 1,
+ "page": "delivery/tiangong_explore.html",
+ "sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78",
+ "what": "Safari in an iPhone simulator on this Mac (Mac GPU; frame rates do not stand for a real phone)",
+ "device": "iPhone 17 simulator",
+ "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Mobile/15E148 Safari/604.1",
+ "screen": [
+  402,
+  714,
+  3
+ ],
+ "touch": 5,
+ "out": [
+  804,
+  1428
+ ],
+ "run_at": "2026-11-24T16:30:52.333Z",
+ "real_device": "BLOCKED_ENV",
+ "passed": 15,
+ "total": 15,
+ "checks": [
+  {
+   "name": "run finished",
+   "passed": true,
+   "info": null
+  },
+  {
+   "name": "page built",
+   "passed": true,
+   "info": {
+    "ms": 3470,
+    "msg": "点灯"
+   }
+  },
+  {
+   "name": "ten places",
+   "passed": true,
+   "info": 10
+  },
+  {
+   "name": "place 云海",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "worst": 23,
+    "scale": 0.6,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 南天门",
+   "passed": true,
+   "info": {
+    "fps": 56.2,
+    "worst": 27,
+    "scale": 0.34,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 龙柱",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "worst": 31,
+    "scale": 0.6,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 长桥",
+   "passed": true,
+   "info": {
+    "fps": 57.5,
+    "worst": 26,
+    "scale": 0.34,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 丹墀",
+   "passed": true,
+   "info": {
+    "fps": 52.3,
+    "worst": 29,
+    "scale": 0.28,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 凌霄",
+   "passed": true,
+   "info": {
+    "fps": 59.3,
+    "worst": 30,
+    "scale": 0.28,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 月坛",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "worst": 19,
+    "scale": 0.6,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 仰观",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "worst": 23,
+    "scale": 0.6,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 俯观",
+   "passed": true,
+   "info": {
+    "fps": 59.9,
+    "worst": 24,
+    "scale": 0.6,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 行者",
+   "passed": true,
+   "info": {
+    "fps": 56.2,
+    "worst": 27,
+    "scale": 0.34,
+    "gl": 0
+   }
+  },
+  {
+   "name": "help sheet opened",
+   "passed": true,
+   "info": null
+  },
+  {
+   "name": "no script error",
+   "passed": true,
+   "info": []
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+.DS_Store
+.claude/
+__pycache__/
+*.pyc
+*.tmp
+node_modules/
+/out/
+/delivery/
+/evidence/
+/samples/
+/publish/
+/results.json
+/VERIFICATION_REPORT.md
+/audio/.cache/
+/audio/stems/

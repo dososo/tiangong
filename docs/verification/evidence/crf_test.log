@@ -1,0 +1,8 @@
+{'at': 100, 'crf': 17.0, 'mbit': 94.3, 'vmaf': 99.49, 'vmaf_min': 98.74, 'psnr_y': 43.74, 'seconds': 99}
+{'at': 100, 'crf': 19.0, 'mbit': 51.4, 'vmaf': 99.19, 'vmaf_min': 98.29, 'psnr_y': 42.7, 'seconds': 75}
+{'at': 100, 'crf': 21.0, 'mbit': 21.9, 'vmaf': 98.83, 'vmaf_min': 97.61, 'psnr_y': 42.1, 'seconds': 53}
+{'at': 100, 'crf': 23.0, 'mbit': 10.5, 'vmaf': 98.31, 'vmaf_min': 96.9, 'psnr_y': 41.88, 'seconds': 44}
+{'at': 700, 'crf': 17.0, 'mbit': 70.0, 'vmaf': 100.0, 'vmaf_min': 100.0, 'psnr_y': 45.05, 'seconds': 69}
+{'at': 700, 'crf': 19.0, 'mbit': 45.6, 'vmaf': 100.0, 'vmaf_min': 99.83, 'psnr_y': 44.05, 'seconds': 77}
+{'at': 700, 'crf': 21.0, 'mbit': 32.6, 'vmaf': 99.99, 'vmaf_min': 99.48, 'psnr_y': 43.02, 'seconds': 50}
+{'at': 700, 'crf': 23.0, 'mbit': 24.0, 'vmaf': 99.98, 'vmaf_min': 98.99, 'psnr_y': 41.93, 'seconds': 47}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>天宫</title>
+<!-- 天宫漫游. Code: Apache-2.0. Guqin samples: GuqinSonGest (Han Han, Zenodo 14962054, CC BY 4.0), cut, retuned and replayed. Fonts: subsets of Noto Serif SC (c Adobe, OFL-1.1) and LXGW WenKai (c LXGW, c The Klee Project Authors, OFL-1.1). See CREDITS.md. -->
+<style>
+:root{color-scheme:dark;--paper:#F4E9DC;--ink:#0b0a0d;--gold:#B08C50;--cinnabar:#9E4B3B;--cinnabar-hi:#B4553F;--line:rgba(176,140,80,.55);--serif:"TG UI","Songti SC","STSong","Noto Serif SC","SimSun",serif;--title:"TG Title","TG UI","Songti SC",serif}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;background:#000;color:var(--paper);font-family:var(--serif);-webkit-user-select:none;user-select:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button:focus-visible,#c:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+#c{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;outline:none;cursor:grab}
+#c:active{cursor:grabbing}
+body.idle #c{cursor:none}
+#veil{position:fixed;inset:0;background:#000;pointer-events:none;opacity:0}
+/* lines of the book, set as an inscription */
+#cap{position:fixed;top:11vh;display:flex;flex-direction:row-reverse;gap:1.15em;font-size:clamp(17px,2.9vh,30px);pointer-events:none;text-shadow:0 0 14px rgba(8,6,10,.75),0 0 3px rgba(8,6,10,.7)}
+#cap.r{right:max(6.2vw,calc(24px + env(safe-area-inset-right,0px)))}#cap.l{left:max(6.2vw,calc(24px + env(safe-area-inset-left,0px)))}
+#cap div{writing-mode:vertical-rl;letter-spacing:.34em;line-height:1}
+#cap span{opacity:0;transition:opacity 1s ease}
+#cap.on span{opacity:.96}
+#cap.off span{opacity:0;transition-duration:1.6s}
+/* the hud keeps to the edges */
+.hud{transition:opacity .9s ease}
+body.idle .hud,body.quiet .hud{opacity:0;pointer-events:none}
+body.idle .hud *,body.quiet .hud *{pointer-events:none}
+#foot{position:fixed;left:0;right:0;bottom:0;height:210px;pointer-events:none;background:linear-gradient(to top,rgba(6,5,8,.62),rgba(6,5,8,.28) 46%,rgba(6,5,8,0))}
+#slips{position:fixed;left:290px;right:290px;margin:0 auto;width:fit-content;max-width:calc(100vw - 580px);bottom:calc(26px + env(safe-area-inset-bottom));display:flex;align-items:flex-start;border-top:1px solid var(--line);padding-top:12px;overflow-x:auto;scrollbar-width:none}
+#slips::-webkit-scrollbar{display:none}
+.v{writing-mode:vertical-rl;font-size:15px;letter-spacing:.24em;line-height:1;padding:8px 9px 6px;color:rgba(244,233,220,.74);transition:color .3s;position:relative;min-height:74px;text-align:left;flex:none;text-shadow:0 0 6px rgba(6,5,8,.8)}
+.v:hover{color:var(--paper)}
+.v[aria-current=true],.v[aria-pressed=true]{color:#fff6e8}
+.v[aria-current=true]::before,.v[aria-pressed=true]::before{content:"";position:absolute;top:-3px;left:50%;width:5px;height:5px;margin-left:-2.5px;background:var(--cinnabar-hi)}
+#tools{position:fixed;left:calc(26px + env(safe-area-inset-left));bottom:calc(26px + env(safe-area-inset-bottom));display:flex;border-top:1px solid var(--line);padding-top:12px}
+#dial{position:fixed;right:calc(26px + env(safe-area-inset-right));bottom:calc(22px + env(safe-area-inset-bottom));width:148px;height:148px;touch-action:none;cursor:pointer}
+#dial text{font-family:var(--serif);font-size:13px;fill:rgba(244,233,220,.70);text-anchor:middle;dominant-baseline:central}
+#dial text.on{fill:#fff6e8;font-size:17px}
+#mark{position:fixed;left:calc(26px + env(safe-area-inset-left));top:calc(24px + env(safe-area-inset-top));display:flex;gap:12px;align-items:flex-start}
+#mark b{font-family:var(--title);font-weight:200;font-size:34px;line-height:1.12;writing-mode:vertical-rl;text-shadow:0 0 12px rgba(6,5,8,.6)}
+#mark i{font-style:normal;writing-mode:vertical-rl;font-size:12px;letter-spacing:.3em;color:rgba(244,233,220,.72);padding-top:4px;text-shadow:0 0 6px rgba(6,5,8,.8)}
+#help{position:fixed;right:calc(26px + env(safe-area-inset-right));top:calc(24px + env(safe-area-inset-top));font-size:14px;letter-spacing:.1em;color:rgba(244,233,220,.74);padding:4px 6px;text-shadow:0 0 6px rgba(6,5,8,.8)}
+#help:hover{color:var(--paper)}
+#sheet{position:fixed;inset:0;display:none;background:rgba(8,7,9,.80);cursor:pointer}
+#sheet.on{display:grid;overflow:auto}
+#sheet .in{margin:auto;padding:22px 0}
+#sheet dl{margin:0;display:grid;grid-template-columns:auto auto;gap:15px 34px;font-size:15px;line-height:1.5;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:38px 40px;white-space:nowrap}
+#sheet dt{color:var(--gold);text-align:right}
+#sheet p{width:0;min-width:100%;margin:20px 0 0;font-size:12px;line-height:2;color:rgba(244,233,220,.62);text-align:center;text-wrap:balance}
+#sheet a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:rgba(176,140,80,.6)}
+#still{position:fixed;left:0;right:0;bottom:calc(30px + env(safe-area-inset-bottom));display:none;flex-direction:column;align-items:center;gap:14px;font-size:14px;letter-spacing:.2em;text-shadow:0 0 6px rgba(6,5,8,.9)}
+#still.on{display:flex}
+#still .bar{width:220px;height:1px;background:rgba(244,233,220,.22)}
+#still .bar s{display:block;height:1px;width:0;background:var(--gold)}
+#still div.b{display:flex;gap:30px;opacity:0;transition:opacity .6s;pointer-events:none}
+#still.done div.b{opacity:1;pointer-events:auto}
+#still.done .bar{opacity:0}
+#start{position:fixed;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1.8s ease}
+#start.gone{opacity:0;pointer-events:none}
+#start h1{font-family:var(--title);font-weight:200;font-size:clamp(84px,19vh,200px);line-height:1.14;writing-mode:vertical-rl;letter-spacing:.02em}
+#start p{font-size:14px;letter-spacing:.42em;padding-left:.42em;color:rgba(244,233,220,.66);min-height:22px;margin-top:20px}
+#start .bar{width:180px;height:1px;background:rgba(244,233,220,.16);margin-top:7vh}
+#start .bar s{display:block;height:1px;width:0;background:var(--gold);transition:width .5s ease}
+#enter{margin-top:7vh;width:60px;height:60px;background:var(--cinnabar);color:var(--paper);font-size:26px;display:none;transition:background .3s}
+#enter:hover{background:var(--cinnabar-hi)}
+#start.ready #enter{display:block}#start.ready .bar,#start.ready p{display:none}
+#start.bad p{letter-spacing:.06em;max-width:30em;line-height:1.9;text-align:center;padding:0 24px}
+@media (max-width:1120px){#slips{left:280px;right:190px;max-width:calc(100vw - 470px)}}
+@media (max-width:900px){#slips{--l:max(16px,env(safe-area-inset-left,0px));--r:max(16px,env(safe-area-inset-right,0px));max-width:calc(100vw - var(--l) - var(--r));left:var(--l);right:var(--r);margin:0;bottom:calc(14px + env(safe-area-inset-bottom))}#tools{bottom:auto;left:auto;right:calc(14px + env(safe-area-inset-right));top:calc(58px + env(safe-area-inset-top));border-top:0;flex-direction:column;padding:0}#tools .v{writing-mode:horizontal-tb;min-height:0;letter-spacing:.1em;text-align:right;padding:9px 6px}#tools .v[aria-pressed=true]::before{top:50%;left:-6px;margin:-2px 0 0}#dial{width:112px;height:112px;bottom:calc(124px + env(safe-area-inset-bottom));right:calc(14px + env(safe-area-inset-right))}#cap{top:9vh}#cap.r{right:calc(92px + env(safe-area-inset-right))}#cap.l{left:calc(24px + env(safe-area-inset-left));top:15vh}#sheet dl{padding:26px 18px;gap:11px 18px;font-size:14px;max-width:calc(100vw - 24px)}#sheet dd{white-space:normal}}
+@media (prefers-reduced-motion:reduce){.hud,#cap span,#start{transition-duration:.01s}}
+</style>
+</head>
+<body>
+<canvas id="c" tabindex="0" aria-label="天宫，可漫游的三维世界"></canvas>
+<div id="veil"></div>
+<div id="cap" aria-live="polite"></div>
+<div id="foot" class="hud"></div>
+<div id="mark" class="hud"><b>天宫</b><i id="where"></i></div>
+<button id="help" class="hud" aria-label="操作说明">用法</button>
+<nav id="slips" class="hud" aria-label="观景处"></nav>
+<div id="tools" class="hud" role="toolbar" aria-label="随行与定格"></div>
+<svg id="dial" class="hud" viewBox="-74 -74 148 148" role="slider" tabindex="0" data-keys aria-label="时辰" aria-valuemin="0" aria-valuemax="24" aria-valuenow="0"></svg>
+<div id="still"><div class="bar"><s></s></div><div class="t"></div><div class="b"><button id="save">存图</button><button id="back">返回</button></div></div>
+<div id="sheet" role="dialog" aria-label="操作说明"><div class="in"><dl></dl><p>典出《西游记》第四回。琴声采自 <a href="https://doi.org/10.5281/zenodo.14962054" target="_blank" rel="noopener noreferrer">GuqinSonGest</a>（Han Han，<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>），经切取、校音、重奏。字体为 Noto Serif SC 与霞鹜文楷的子集（<a href="https://openfontlicense.org" target="_blank" rel="noopener noreferrer">OFL 1.1</a>）。</p></div></div>
+<div id="start"><h1>天宫</h1><div class="bar"><s></s></div><p role="status"></p><button id="enter" aria-label="进入天宫">入</button></div>
+<script type="module" src="./src/explore/main.js"></script>
+</body>
+</html>

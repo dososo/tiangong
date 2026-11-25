@@ -1,0 +1,219 @@
+{
+ "schema_version": 1,
+ "time": "2026-11-24T17:18:16.010Z",
+ "passed": 5,
+ "total": 5,
+ "checks": [
+  {
+   "name": "thirty-three tiers",
+   "passed": true,
+   "info": {
+    "n": 33,
+    "y0": 2500,
+    "dy": 1250
+   }
+  },
+  {
+   "name": "thirty-three bells",
+   "passed": true,
+   "info": 33
+  },
+  {
+   "name": "the ascent starts at the same second in film and score",
+   "passed": true,
+   "info": [
+    120,
+    120
+   ]
+  },
+  {
+   "name": "every stroke falls within one frame (42 ms) of its crossing",
+   "passed": true,
+   "info": {
+    "worst_ms": 5,
+    "mean_ms": 0
+   }
+  },
+  {
+   "name": "blink and closing eye match the score",
+   "passed": true,
+   "info": {
+    "film": [
+     149.35,
+     152.15
+    ],
+    "score": [
+     149.35,
+     152.15
+    ]
+   }
+  }
+ ],
+ "rows": [
+  {
+   "heaven": 1,
+   "bell": 127.55,
+   "crossing": 127.554
+  },
+  {
+   "heaven": 2,
+   "bell": 129.36,
+   "crossing": 129.365
+  },
+  {
+   "heaven": 3,
+   "bell": 130.59,
+   "crossing": 130.595
+  },
+  {
+   "heaven": 4,
+   "bell": 131.58,
+   "crossing": 131.579
+  },
+  {
+   "heaven": 5,
+   "bell": 132.42,
+   "crossing": 132.42
+  },
+  {
+   "heaven": 6,
+   "bell": 133.16,
+   "crossing": 133.164
+  },
+  {
+   "heaven": 7,
+   "bell": 133.84,
+   "crossing": 133.837
+  },
+  {
+   "heaven": 8,
+   "bell": 134.46,
+   "crossing": 134.455
+  },
+  {
+   "heaven": 9,
+   "bell": 135.03,
+   "crossing": 135.029
+  },
+  {
+   "heaven": 10,
+   "bell": 135.57,
+   "crossing": 135.567
+  },
+  {
+   "heaven": 11,
+   "bell": 136.07,
+   "crossing": 136.075
+  },
+  {
+   "heaven": 12,
+   "bell": 136.56,
+   "crossing": 136.556
+  },
+  {
+   "heaven": 13,
+   "bell": 137.02,
+   "crossing": 137.015
+  },
+  {
+   "heaven": 14,
+   "bell": 137.45,
+   "crossing": 137.454
+  },
+  {
+   "heaven": 15,
+   "bell": 137.88,
+   "crossing": 137.876
+  },
+  {
+   "heaven": 16,
+   "bell": 138.28,
+   "crossing": 138.281
+  },
+  {
+   "heaven": 17,
+   "bell": 138.67,
+   "crossing": 138.673
+  },
+  {
+   "heaven": 18,
+   "bell": 139.05,
+   "crossing": 139.051
+  },
+  {
+   "heaven": 19,
+   "bell": 139.42,
+   "crossing": 139.418
+  },
+  {
+   "heaven": 20,
+   "bell": 139.77,
+   "crossing": 139.774
+  },
+  {
+   "heaven": 21,
+   "bell": 140.12,
+   "crossing": 140.119
+  },
+  {
+   "heaven": 22,
+   "bell": 140.46,
+   "crossing": 140.456
+  },
+  {
+   "heaven": 23,
+   "bell": 140.78,
+   "crossing": 140.784
+  },
+  {
+   "heaven": 24,
+   "bell": 141.1,
+   "crossing": 141.104
+  },
+  {
+   "heaven": 25,
+   "bell": 141.42,
+   "crossing": 141.417
+  },
+  {
+   "heaven": 26,
+   "bell": 141.72,
+   "crossing": 141.722
+  },
+  {
+   "heaven": 27,
+   "bell": 142.02,
+   "crossing": 142.021
+  },
+  {
+   "heaven": 28,
+   "bell": 142.31,
+   "crossing": 142.314
+  },
+  {
+   "heaven": 29,
+   "bell": 142.6,
+   "crossing": 142.601
+  },
+  {
+   "heaven": 30,
+   "bell": 142.88,
+   "crossing": 142.883
+  },
+  {
+   "heaven": 31,
+   "bell": 143.16,
+   "crossing": 143.159
+  },
+  {
+   "heaven": 32,
+   "bell": 143.43,
+   "crossing": 143.43
+  },
+  {
+   "heaven": 33,
+   "bell": 143.7,
+   "crossing": 143.697
+  }
+ ]
+}

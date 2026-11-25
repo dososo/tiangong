@@ -1,0 +1,19 @@
+c_00000_00096.mkv 0 of 96 identical
+c_00096_00192.mkv 0 of 96 identical
+c_00192_00288.mkv 0 of 96 identical
+c_00288_00384.mkv 0 of 96 identical
+c_00384_00480.mkv 96 of 96 identical
+c_00480_00576.mkv 59 of 96 identical
+c_00576_00672.mkv 96 of 96 identical
+c_00672_00768.mkv 0 of 96 identical
+c_00768_00864.mkv 23 of 96 identical
+{'shot': 'A', 'frames': 384, 'identical': 0, 'changed': [0, 383]}
+{'shot': 'B1', 'frames': 168, 'identical': 131, 'changed': [515, 551]}
+{'shot': 'B2', 'frames': 120, 'identical': 120, 'changed': []}
+{'shot': 'B3', 'frames': 168, 'identical': 0, 'changed': [672, 839]}
+{'shot': 'C (first 24 frames)', 'frames': 24, 'identical': 23, 'changed': [841, 841]}
+shot C, not identical after decoding: {841: 13}
+PASS B2 never shows the gate: all 120 frames identical
+PASS the first 24 frames of C (gate shut in both): identical, or at most one predicted frame within 16 of 1023
+PASS B1 until the gate comes into view: identical from its first frame on
+PASS A and B3 show the gate: changed

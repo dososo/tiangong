@@ -1,0 +1,506 @@
+{
+ "schema_version": 1,
+ "at": "2026-11-25T00:30:45.100Z",
+ "url": "local copy",
+ "chrome": "158.0.8127.38",
+ "passed": 53,
+ "total": 53,
+ "checks": [
+  {
+   "name": "front page 360×740: no sideways scroll",
+   "passed": true,
+   "info": {
+    "over": 0,
+    "out": []
+   }
+  },
+  {
+   "name": "front page 360×740: every picture arrives",
+   "passed": true,
+   "info": {
+    "images": 39,
+    "broken": []
+   }
+  },
+  {
+   "name": "front page 360×740: no text under 12 px, no tap target under 24 px, fonts loaded",
+   "passed": true,
+   "info": {
+    "small": [],
+    "taps": [],
+    "fonts": []
+   }
+  },
+  {
+   "name": "front page 360×740: console and network are clean",
+   "passed": true,
+   "info": {
+    "errors": [],
+    "bad": []
+   }
+  },
+  {
+   "name": "front page 360×740: nothing from other sites, no film before it is asked for",
+   "passed": true,
+   "info": {
+    "outside": [],
+    "media": []
+   }
+  },
+  {
+   "name": "front page 390×844: no sideways scroll",
+   "passed": true,
+   "info": {
+    "over": 0,
+    "out": []
+   }
+  },
+  {
+   "name": "front page 390×844: every picture arrives",
+   "passed": true,
+   "info": {
+    "images": 39,
+    "broken": []
+   }
+  },
+  {
+   "name": "front page 390×844: no text under 12 px, no tap target under 24 px, fonts loaded",
+   "passed": true,
+   "info": {
+    "small": [],
+    "taps": [],
+    "fonts": []
+   }
+  },
+  {
+   "name": "front page 390×844: console and network are clean",
+   "passed": true,
+   "info": {
+    "errors": [],
+    "bad": []
+   }
+  },
+  {
+   "name": "front page 390×844: nothing from other sites, no film before it is asked for",
+   "passed": true,
+   "info": {
+    "outside": [],
+    "media": []
+   }
+  },
+  {
+   "name": "front page 820×1180: no sideways scroll",
+   "passed": true,
+   "info": {
+    "over": 0,
+    "out": []
+   }
+  },
+  {
+   "name": "front page 820×1180: every picture arrives",
+   "passed": true,
+   "info": {
+    "images": 39,
+    "broken": []
+   }
+  },
+  {
+   "name": "front page 820×1180: no text under 12 px, no tap target under 24 px, fonts loaded",
+   "passed": true,
+   "info": {
+    "small": [],
+    "taps": [],
+    "fonts": []
+   }
+  },
+  {
+   "name": "front page 820×1180: console and network are clean",
+   "passed": true,
+   "info": {
+    "errors": [],
+    "bad": []
+   }
+  },
+  {
+   "name": "front page 820×1180: nothing from other sites, no film before it is asked for",
+   "passed": true,
+   "info": {
+    "outside": [],
+    "media": []
+   }
+  },
+  {
+   "name": "front page 844×390: no sideways scroll",
+   "passed": true,
+   "info": {
+    "over": 0,
+    "out": []
+   }
+  },
+  {
+   "name": "front page 844×390: every picture arrives",
+   "passed": true,
+   "info": {
+    "images": 39,
+    "broken": []
+   }
+  },
+  {
+   "name": "front page 844×390: no text under 12 px, no tap target under 24 px, fonts loaded",
+   "passed": true,
+   "info": {
+    "small": [],
+    "taps": [],
+    "fonts": []
+   }
+  },
+  {
+   "name": "front page 844×390: console and network are clean",
+   "passed": true,
+   "info": {
+    "errors": [],
+    "bad": []
+   }
+  },
+  {
+   "name": "front page 844×390: nothing from other sites, no film before it is asked for",
+   "passed": true,
+   "info": {
+    "outside": [],
+    "media": []
+   }
+  },
+  {
+   "name": "front page 1024×768: no sideways scroll",
+   "passed": true,
+   "info": {
+    "over": 0,
+    "out": []
+   }
+  },
+  {
+   "name": "front page 1024×768: every picture arrives",
+   "passed": true,
+   "info": {
+    "images": 39,
+    "broken": []
+   }
+  },
+  {
+   "name": "front page 1024×768: no text under 12 px, no tap target under 24 px, fonts loaded",
+   "passed": true,
+   "info": {
+    "small": [],
+    "taps": [],
+    "fonts": []
+   }
+  },
+  {
+   "name": "front page 1024×768: console and network are clean",
+   "passed": true,
+   "info": {
+    "errors": [],
+    "bad": []
+   }
+  },
+  {
+   "name": "front page 1024×768: nothing from other sites, no film before it is asked for",
+   "passed": true,
+   "info": {
+    "outside": [],
+    "media": []
+   }
+  },
+  {
+   "name": "front page 1440×900: no sideways scroll",
+   "passed": true,
+   "info": {
+    "over": 0,
+    "out": []
+   }
+  },
+  {
+   "name": "front page 1440×900: every picture arrives",
+   "passed": true,
+   "info": {
+    "images": 39,
+    "broken": []
+   }
+  },
+  {
+   "name": "front page 1440×900: no text under 12 px, no tap target under 24 px, fonts loaded",
+   "passed": true,
+   "info": {
+    "small": [],
+    "taps": [],
+    "fonts": []
+   }
+  },
+  {
+   "name": "front page 1440×900: console and network are clean",
+   "passed": true,
+   "info": {
+    "errors": [],
+    "bad": []
+   }
+  },
+  {
+   "name": "front page 1440×900: nothing from other sites, no film before it is asked for",
+   "passed": true,
+   "info": {
+    "outside": [],
+    "media": [
+     "tiangong-1080p-hevc.mp4",
+     "tiangong-1080p-hevc.mp4"
+    ]
+   }
+  },
+  {
+   "name": "front page: language, title, description, canonical address, one h1",
+   "passed": true,
+   "info": {
+    "lang": "zh-Hans",
+    "title": "天宫 · The Celestial Palace",
+    "desc": "照着《西游记》第四回的一段赋，用代码造的天宫：一部 168 秒的 4K 影片，一座可以走进去的网页。",
+    "canon": "https://dososo.github.io/tiangong/",
+    "image": "https://dososo.github.io/tiangong/media/og.jpg",
+    "card": "summary_large_image",
+    "h1": 1,
+    "noalt": 0,
+    "nosize": 0
+   }
+  },
+  {
+   "name": "front page: every picture has an alt text and a size",
+   "passed": true,
+   "info": {
+    "lang": "zh-Hans",
+    "title": "天宫 · The Celestial Palace",
+    "desc": "照着《西游记》第四回的一段赋，用代码造的天宫：一部 168 秒的 4K 影片，一座可以走进去的网页。",
+    "canon": "https://dososo.github.io/tiangong/",
+    "image": "https://dososo.github.io/tiangong/media/og.jpg",
+    "card": "summary_large_image",
+    "h1": 1,
+    "noalt": 0,
+    "nosize": 0
+   }
+  },
+  {
+   "name": "front page: the share card is an absolute address that answers",
+   "passed": true,
+   "info": "https://dososo.github.io/tiangong/media/og.jpg"
+  },
+  {
+   "name": "front page: every inner link leads somewhere",
+   "passed": true,
+   "info": {
+    "inner": [
+     "http://127.0.0.1:49168/tiangong/",
+     "http://127.0.0.1:49168/tiangong/roam/",
+     "http://127.0.0.1:49168/tiangong/media/stills/01.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/02.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/03.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/04.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/05.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/06.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/07.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/08.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/09.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/10.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/11.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/12.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/13.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/14.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/15.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/16.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/17.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/18.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/19.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/20.jpg",
+     "http://127.0.0.1:49168/tiangong/media/stills/21.jpg"
+    ],
+    "dead": [],
+    "ids": []
+   }
+  },
+  {
+   "name": "film: plays",
+   "passed": true,
+   "info": {
+    "t": 2.460268,
+    "src": "tiangong-1080p-hevc.mp4",
+    "w": 1920,
+    "d": 168.022,
+    "err": null
+   }
+  },
+  {
+   "name": "film: seeks and goes on",
+   "passed": true,
+   "info": {
+    "a": 119.600191,
+    "b": 121.359877,
+    "err": null,
+    "q": 0
+   }
+  },
+  {
+   "name": "film: the picture is there (not black, not flat)",
+   "passed": true,
+   "info": {
+    "mean": 90,
+    "dev": 46.3
+   }
+  },
+  {
+   "name": "front page 1920×1080: no sideways scroll",
+   "passed": true,
+   "info": {
+    "over": 0,
+    "out": []
+   }
+  },
+  {
+   "name": "front page 1920×1080: every picture arrives",
+   "passed": true,
+   "info": {
+    "images": 39,
+    "broken": []
+   }
+  },
+  {
+   "name": "front page 1920×1080: no text under 12 px, no tap target under 24 px, fonts loaded",
+   "passed": true,
+   "info": {
+    "small": [],
+    "taps": [],
+    "fonts": []
+   }
+  },
+  {
+   "name": "front page 1920×1080: console and network are clean",
+   "passed": true,
+   "info": {
+    "errors": [],
+    "bad": []
+   }
+  },
+  {
+   "name": "front page 1920×1080: nothing from other sites, no film before it is asked for",
+   "passed": true,
+   "info": {
+    "outside": [],
+    "media": []
+   }
+  },
+  {
+   "name": "front page 2560×1440: no sideways scroll",
+   "passed": true,
+   "info": {
+    "over": 0,
+    "out": []
+   }
+  },
+  {
+   "name": "front page 2560×1440: every picture arrives",
+   "passed": true,
+   "info": {
+    "images": 39,
+    "broken": []
+   }
+  },
+  {
+   "name": "front page 2560×1440: no text under 12 px, no tap target under 24 px, fonts loaded",
+   "passed": true,
+   "info": {
+    "small": [],
+    "taps": [],
+    "fonts": []
+   }
+  },
+  {
+   "name": "front page 2560×1440: console and network are clean",
+   "passed": true,
+   "info": {
+    "errors": [],
+    "bad": []
+   }
+  },
+  {
+   "name": "front page 2560×1440: nothing from other sites, no film before it is asked for",
+   "passed": true,
+   "info": {
+    "outside": [],
+    "media": []
+   }
+  },
+  {
+   "name": "film: the second copy plays too",
+   "passed": true,
+   "info": {
+    "t": 1.760297,
+    "w": 1280,
+    "d": 168.022,
+    "err": null,
+    "src": "tiangong-720p.mp4"
+   }
+  },
+  {
+   "name": "palace: the page is the file that was verified (SHA-256)",
+   "passed": true,
+   "info": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78"
+  },
+  {
+   "name": "palace, desktop: opens and runs",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "err": 0,
+    "lost": false,
+    "place": "南天门",
+    "over": 0,
+    "size": [
+     null,
+     null
+    ]
+   }
+  },
+  {
+   "name": "palace, desktop: console and network are clean, nothing from other sites",
+   "passed": true,
+   "info": {
+    "errors": [],
+    "bad": [],
+    "media": [],
+    "outside": [],
+    "bytes": 0
+   }
+  },
+  {
+   "name": "palace, phone size: opens and runs",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "err": 0,
+    "lost": false,
+    "place": "南天门",
+    "over": 0,
+    "size": [
+     null,
+     null
+    ]
+   }
+  },
+  {
+   "name": "palace, phone size: console and network are clean, nothing from other sites",
+   "passed": true,
+   "info": {
+    "errors": [],
+    "bad": [],
+    "media": [],
+    "outside": [],
+    "bytes": 0
+   }
+  }
+ ]
+}

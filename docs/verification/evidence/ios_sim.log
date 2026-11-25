@@ -1,0 +1,16 @@
+PASS run finished null
+PASS page built {"ms": 3470, "msg": "点灯"}
+PASS ten places 10
+PASS place 云海 {"fps": 60, "worst": 23, "scale": 0.6, "gl": 0}
+PASS place 南天门 {"fps": 56.2, "worst": 27, "scale": 0.34, "gl": 0}
+PASS place 龙柱 {"fps": 60, "worst": 31, "scale": 0.6, "gl": 0}
+PASS place 长桥 {"fps": 57.5, "worst": 26, "scale": 0.34, "gl": 0}
+PASS place 丹墀 {"fps": 52.3, "worst": 29, "scale": 0.28, "gl": 0}
+PASS place 凌霄 {"fps": 59.3, "worst": 30, "scale": 0.28, "gl": 0}
+PASS place 月坛 {"fps": 60, "worst": 19, "scale": 0.6, "gl": 0}
+PASS place 仰观 {"fps": 60, "worst": 23, "scale": 0.6, "gl": 0}
+PASS place 俯观 {"fps": 59.9, "worst": 24, "scale": 0.6, "gl": 0}
+PASS place 行者 {"fps": 56.2, "worst": 27, "scale": 0.34, "gl": 0}
+PASS help sheet opened null
+PASS no script error []
+15/15

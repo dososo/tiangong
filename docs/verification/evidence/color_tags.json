@@ -1,0 +1,108 @@
+{
+ "schema_version": 1,
+ "time": "2026-11-24T17:09:55Z",
+ "first_frame": 672,
+ "note": "columns: frame, mean shift, largest tone-band shift, mean absolute difference (of 255)",
+ "tags": {
+  "bt709": {
+   "av": {
+    "worst": 10.44,
+    "frame": 4,
+    "rows_frame_mean_band_abs": [
+     [
+      4,
+      8.79,
+      10.44,
+      8.84
+     ],
+     [
+      12,
+      8.73,
+      10.41,
+      8.79
+     ],
+     [
+      20,
+      8.7,
+      10.41,
+      8.76
+     ]
+    ]
+   },
+   "chrome": {
+    "worst": 10.88,
+    "frame": 4,
+    "rows_frame_mean_band_abs": [
+     [
+      4,
+      9.13,
+      10.88,
+      9.2
+     ],
+     [
+      12,
+      9.07,
+      10.85,
+      9.15
+     ],
+     [
+      20,
+      9.03,
+      10.85,
+      9.12
+     ]
+    ]
+   }
+  },
+  "iec61966-2-1": {
+   "av": {
+    "worst": 0.2,
+    "frame": 20,
+    "rows_frame_mean_band_abs": [
+     [
+      4,
+      0.18,
+      0.19,
+      0.75
+     ],
+     [
+      12,
+      0.17,
+      0.18,
+      0.77
+     ],
+     [
+      20,
+      0.18,
+      0.2,
+      0.79
+     ]
+    ]
+   },
+   "chrome": {
+    "worst": 0.56,
+    "frame": 20,
+    "rows_frame_mean_band_abs": [
+     [
+      4,
+      0.51,
+      0.54,
+      0.6
+     ],
+     [
+      12,
+      0.5,
+      0.52,
+      0.6
+     ],
+     [
+      20,
+      0.52,
+      0.56,
+      0.63
+     ]
+    ]
+   }
+  }
+ }
+}

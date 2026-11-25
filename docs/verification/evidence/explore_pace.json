@@ -1,0 +1,113 @@
+{
+ "schema_version": 1,
+ "page": "delivery/tiangong_explore.html",
+ "sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78",
+ "time": "2026-11-24T17:25:10.316Z",
+ "simulated_display": true,
+ "passed": 8,
+ "total": 8,
+ "checks": [
+  {
+   "name": "60 Hz display: every 1 beat one frame",
+   "pass": true,
+   "info": {
+    "pace": {
+     "hz": 16.666666666666657,
+     "stride": 1,
+     "beat": 16.666666666666657
+    },
+    "beats": 122,
+    "frames": 122,
+    "fps": 60
+   }
+  },
+  {
+   "name": "75 Hz display: every 1 beat one frame",
+   "pass": true,
+   "info": {
+    "pace": {
+     "hz": 13.333333333333336,
+     "stride": 1,
+     "beat": 13.333333333333336
+    },
+    "beats": 120,
+    "frames": 120,
+    "fps": 75
+   }
+  },
+  {
+   "name": "90 Hz display: every 1 beat one frame",
+   "pass": true,
+   "info": {
+    "pace": {
+     "hz": 11.111111111111114,
+     "stride": 1,
+     "beat": 11.111111111111114
+    },
+    "beats": 122,
+    "frames": 122,
+    "fps": 90
+   }
+  },
+  {
+   "name": "120 Hz display: every 2 beats one frame",
+   "pass": true,
+   "info": {
+    "pace": {
+     "hz": 8.333333333333329,
+     "stride": 2,
+     "beat": 16.666666666666657
+    },
+    "beats": 123,
+    "frames": 61,
+    "fps": 60
+   }
+  },
+  {
+   "name": "moved from a 120 Hz to a 60 Hz screen: back to every beat",
+   "pass": true,
+   "info": {
+    "hz": 16.66666666666697,
+    "stride": 1,
+    "beat": 16.66666666666697
+   }
+  },
+  {
+   "name": "and back to 120 Hz: every second beat",
+   "pass": true,
+   "info": {
+    "hz": 8.33333333333303,
+    "stride": 2,
+    "beat": 16.66666666666606
+   }
+  },
+  {
+   "name": "144 Hz display: every 2 beats one frame",
+   "pass": true,
+   "info": {
+    "pace": {
+     "hz": 6.944444444444443,
+     "stride": 2,
+     "beat": 13.888888888888886
+    },
+    "beats": 120,
+    "frames": 60,
+    "fps": 72
+   }
+  },
+  {
+   "name": "240 Hz display: every 4 beats one frame",
+   "pass": true,
+   "info": {
+    "pace": {
+     "hz": 4.166666666666664,
+     "stride": 4,
+     "beat": 16.666666666666657
+    },
+    "beats": 122,
+    "frames": 31,
+    "fps": 60
+   }
+  }
+ ]
+}

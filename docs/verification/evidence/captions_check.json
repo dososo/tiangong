@@ -1,0 +1,168 @@
+{
+ "schema_version": 1,
+ "checked_at": "2026-11-24",
+ "method": "web-fetch 子代理读取页面后逐条比对（独立于本会话的改写）；in_source 由脚本在 src/film/overlay.js 中逐字查找",
+ "source": "https://zh.wikisource.org/wiki/西遊記/第004回",
+ "oldid": 2449093,
+ "http": 200,
+ "passage": "十三处均出自同一段赋文（「初登上界，乍入天堂」起，至「猴王有分來天境，不墮人間點污泥」止）",
+ "passed": 13,
+ "total": 13,
+ "items": [
+  {
+   "shot": "A",
+   "caption": [
+    "初登上界",
+    "乍入天堂"
+   ],
+   "page": "初登上界，乍入天堂",
+   "result": "FOUND",
+   "difference": "繁简",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "B1",
+   "caption": [
+    "只见那南天门",
+    "碧沉沉琉璃造就",
+    "明幌幌宝玉妆成"
+   ],
+   "page": "只見那南天門；碧沉沉，琉璃造就；明幌幌，寶玉粧成",
+   "result": "FOUND",
+   "difference": "繁简；妆／粧通",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "B2",
+   "caption": [
+    "柱上缠绕着",
+    "金鳞耀日赤须龙"
+   ],
+   "page": "柱上纏繞著；金鱗耀日赤鬚龍",
+   "result": "FOUND",
+   "difference": "繁简",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "C",
+   "caption": [
+    "金光万道滚红霓",
+    "瑞气千条喷紫雾"
+   ],
+   "page": "金光萬道滾紅霓，瑞氣千條噴紫霧",
+   "result": "FOUND",
+   "difference": "繁简",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "D-1",
+   "caption": [
+    "这天上有",
+    "三十三座天宫"
+   ],
+   "page": "這天上有三十三座天宮",
+   "result": "FOUND",
+   "difference": "繁简",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "D-2",
+   "caption": [
+    "又有",
+    "七十二重宝殿"
+   ],
+   "page": "又有七十二重寶殿",
+   "result": "FOUND",
+   "difference": "繁简",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "E1",
+   "caption": [
+    "复道回廊",
+    "处处玲珑剔透"
+   ],
+   "page": "復道迴廊，處處玲瓏剔透",
+   "result": "FOUND",
+   "difference": "繁简；回／迴",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "E2",
+   "caption": [
+    "三檐四簇",
+    "层层龙凤翱翔"
+   ],
+   "page": "三簷四簇，層層龍鳳翱翔",
+   "result": "FOUND",
+   "difference": "繁简；檐／簷",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "F1",
+   "caption": [
+    "参圣金乌着底飞"
+   ],
+   "page": "參聖金烏著底飛",
+   "result": "FOUND",
+   "difference": "繁简",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "F2",
+   "caption": [
+    "朝王玉兔坛边过"
+   ],
+   "page": "朝王玉兔壇邊過",
+   "result": "FOUND",
+   "difference": "繁简",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "G1",
+   "caption": [
+    "金钟撞动",
+    "三曹神表进丹墀"
+   ],
+   "page": "金鐘撞動，三曹神表進丹墀",
+   "result": "FOUND",
+   "difference": "繁简",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "G2",
+   "caption": [
+    "天鼓鸣时",
+    "万圣朝王参玉帝"
+   ],
+   "page": "天鼓鳴時，萬聖朝王參玉帝",
+   "result": "FOUND",
+   "difference": "繁简",
+   "in_source": true,
+   "missing_in_source": []
+  },
+  {
+   "shot": "J",
+   "caption": [
+    "猴王有分来天境",
+    "不堕人间点污泥"
+   ],
+   "page": "猴王有分來天境，不墮人間點污泥",
+   "result": "FOUND",
+   "difference": "繁简",
+   "in_source": true,
+   "missing_in_source": []
+  }
+ ]
+}

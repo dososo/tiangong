@@ -1,0 +1,5 @@
+# Bytes stay as they are on every system: the pages and the evidence are tied to SHA-256.
+* -text
+roam/index.html linguist-generated
+build_film/** linguist-vendored
+docs/** linguist-documentation

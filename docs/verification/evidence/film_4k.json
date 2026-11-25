@@ -1,0 +1,244 @@
+{
+ "schema_version": 1,
+ "file": "tiangong_4k.mp4",
+ "sha256": "26f3413aef5cb076eda5da7c2af06cfcdbd00bd703d03cc04f143de086ad1074",
+ "bytes": 847386928,
+ "mbit": 40.4,
+ "time": "2026-11-24T22:56:18Z",
+ "passed": 16,
+ "total": 16,
+ "checks": [
+  {
+   "name": "fast start: index before the pictures",
+   "passed": true,
+   "info": [
+    "ftyp",
+    "moov",
+    "free",
+    "mdat"
+   ]
+  },
+  {
+   "name": "picture format",
+   "passed": true,
+   "info": {
+    "codec": "hevc",
+    "profile": "Main 10",
+    "size": [
+     3840,
+     2160
+    ],
+    "pix": "yuv420p10le",
+    "level": 150,
+    "tag": "hvc1"
+   }
+  },
+  {
+   "name": "colour tags: Rec.709 primaries and matrix, sRGB curve, video range",
+   "passed": true,
+   "info": [
+    "bt709",
+    "iec61966-2-1",
+    "bt709",
+    "tv"
+   ]
+  },
+  {
+   "name": "24 frames a second, constant",
+   "passed": true,
+   "info": [
+    "24/1",
+    "24/1"
+   ]
+  },
+  {
+   "name": "4032 frames",
+   "passed": true,
+   "info": 4032
+  },
+  {
+   "name": "picture lasts 168.000 s",
+   "passed": true,
+   "info": "168.000000"
+  },
+  {
+   "name": "sound: AAC, 48 kHz, stereo, 168 s",
+   "passed": true,
+   "info": {
+    "codec": "aac",
+    "sr": "48000",
+    "ch": 2,
+    "dur": "168.000000",
+    "kbps": 320
+   }
+  },
+  {
+   "name": "picture and sound start together",
+   "passed": true,
+   "info": [
+    "0.000000",
+    "0.000000"
+   ]
+  },
+  {
+   "name": "every frame decodes, no decoder message",
+   "passed": true,
+   "info": {
+    "frames": 4032,
+    "messages": "",
+    "seconds": 31.3
+   }
+  },
+  {
+   "name": "hard cuts exactly where the shot list has them",
+   "passed": true,
+   "info": {
+    "found": [
+     552,
+     672,
+     840,
+     1728,
+     1860,
+     1992,
+     2112,
+     2352,
+     2544,
+     2688,
+     2880
+    ],
+    "expected": [
+     552,
+     672,
+     840,
+     1728,
+     1860,
+     1992,
+     2112,
+     2352,
+     2544,
+     2688,
+     2880
+    ]
+   }
+  },
+  {
+   "name": "black only in the fades and the blink of the eye",
+   "passed": true,
+   "info": {
+    "count": 10,
+    "runs": [
+     [
+      0,
+      2
+     ],
+     [
+      383,
+      384
+     ],
+     [
+      840,
+      840
+     ],
+     [
+      3671,
+      3673
+     ],
+     [
+      4031,
+      4031
+     ]
+    ],
+    "allowed": [
+     [
+      0,
+      4
+     ],
+     [
+      381,
+      387
+     ],
+     [
+      838,
+      842
+     ],
+     [
+      3668,
+      3676
+     ],
+     [
+      4028,
+      4031
+     ]
+    ]
+   }
+  },
+  {
+   "name": "no frozen frames",
+   "passed": true,
+   "info": []
+  },
+  {
+   "name": "no one-frame flashes",
+   "passed": true,
+   "info": {
+    "flagged": [],
+    "nearest": [
+     [
+      3586,
+      0.64
+     ],
+     [
+      3277,
+      0.6
+     ],
+     [
+      3587,
+      0.6
+     ],
+     [
+      3278,
+      0.59
+     ],
+     [
+      3231,
+      0.47
+     ]
+    ],
+    "rule": "more than 3 x the median of the ten frames around + 0.5; nearest = score / limit"
+   }
+  },
+  {
+   "name": "that check sees injected flashes (positive control)",
+   "passed": true,
+   "info": {
+    "seen": 24,
+    "total": 24,
+    "missed": [],
+    "fast_frames": [
+     516,
+     3248
+    ],
+    "calm_frames": [
+     1000,
+     1400,
+     2250,
+     2450,
+     3900
+    ]
+   }
+  },
+  {
+   "name": "loudness near -14 LUFS",
+   "passed": true,
+   "info": {
+    "I": -14.4,
+    "LRA": 13.5
+   }
+  },
+  {
+   "name": "true peak at or below -1 dBTP",
+   "passed": true,
+   "info": -1.3
+  }
+ ]
+}

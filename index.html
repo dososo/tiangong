@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>天宫 · The Celestial Palace</title>
+<meta name="description" content="照着《西游记》第四回的一段赋，用代码造的天宫：一部 168 秒的 4K 影片，一座可以走进去的网页。">
+<meta name="theme-color" content="#0b0a0d">
+<link rel="canonical" href="https://dososo.github.io/tiangong/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dososo.github.io/tiangong/">
+<meta property="og:title" content="天宫 · The Celestial Palace">
+<meta property="og:description" content="照着《西游记》第四回的一段赋，用代码造的天宫。168 秒 4K 影片，一座可以走进去的网页。开源。">
+<meta property="og:image" content="https://dososo.github.io/tiangong/media/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="暮色里的天宫，落日正在殿顶，行者驾云的小小背影">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Crect width='22' height='22' fill='%239E4B3B'/%3E%3Cpath d='M12.5 3L19.5 3 M12.5 6.2L19.5 6.2 M16 3L16 10.2 M12.5 19L12.5 10.2L19.5 10.2L19.5 19 M16 10.2L16 13.6 M14.8 19L14.8 13.6L17.2 13.6L17.2 19 M6 2.4L6 4.6 M2.5 8.2L2.5 4.6L9.5 4.6L9.5 8.2 M4.2 7.6L7.8 7.6L7.8 11.2L4.2 11.2L4.2 7.6 M6 11.2L6 13.4 M3 13.4L9 13.4L9 19L3 19L3 13.4' fill='none' stroke='%23F4E9DC' stroke-width='1.18'/%3E%3C/svg%3E">
+<link rel="preload" href="media/fonts/serif-200.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="media/fonts/serif-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"TG Serif";src:url(media/fonts/serif-200.woff2) format("woff2");font-weight:200;font-display:swap}
+@font-face{font-family:"TG Serif";src:url(media/fonts/serif-400.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{
+  --ink:#0b0a0d; --paper:#f4e9dc; --text:rgba(244,233,220,.84); --quiet:rgba(244,233,220,.66); --line:rgba(244,233,220,.18);
+  --gold:#b08c50; --cinnabar:#9e4b3b;
+  --serif:"TG Serif","Songti SC","STSong","Noto Serif SC","Source Han Serif SC","SimSun",serif;
+  --side:max(22px,5.2vw);
+  --left:max(var(--side),env(safe-area-inset-left,0px)); --right:max(var(--side),env(safe-area-inset-right,0px));
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--ink);-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font:400 16px/2 var(--serif);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-wrap:break-word}
+h1,h2,p,figure,ul,dl,dd{margin:0}
+ul{padding:0;list-style:none}
+img{display:block;width:100%;height:auto;background:#141216}
+a{color:var(--paper);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:1px;text-underline-offset:.42em;transition:text-decoration-color .2s}
+a:hover{text-decoration-color:var(--paper)}
+a:focus-visible,video:focus-visible{outline:1px solid var(--gold);outline-offset:6px}
+.tate{writing-mode:vertical-rl;font-feature-settings:"vert"}
+.nb{white-space:nowrap}
+.seal{display:block;width:1em;height:1em;background:var(--cinnabar)}
+.seal path{fill:none;stroke:var(--paper);stroke-width:1.18}
+.pad{padding-left:var(--left);padding-right:var(--right)}
+
+/* the first screen */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
+.hero picture img{object-fit:cover;object-position:50% 58%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:
+  linear-gradient(to top,var(--ink) 0,rgba(11,10,13,.78) 13%,rgba(11,10,13,.22) 34%,rgba(11,10,13,0) 52%),
+  radial-gradient(60% 80% at 100% 0,rgba(11,10,13,.55),rgba(11,10,13,0) 70%)}
+.name{position:absolute;top:max(8.5vh,36px);right:var(--right);display:flex;flex-direction:row-reverse;align-items:flex-start;gap:clamp(12px,1.5vw,24px);color:var(--paper)}
+.name h1{font-weight:200;font-size:clamp(76px,min(17.5vh,15vw),196px);line-height:1;letter-spacing:.1em}
+.name div{display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:clamp(84px,19vh,214px)}
+.name span{font-size:15px;line-height:1;letter-spacing:.42em;color:var(--paper)}
+.name .seal{font-size:30px}
+.lead{padding-top:24px;padding-bottom:calc(max(5.4vh,34px) + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px 48px}
+.lead p{word-break:keep-all;color:var(--paper);font-weight:200;font-size:clamp(19px,1.9vw,27px);line-height:1.75}
+.lead small{display:block;font-weight:400;font-size:13px;line-height:2;letter-spacing:.06em;color:var(--text)}
+.go{display:flex;gap:34px;font-size:17px;letter-spacing:.14em}
+.name,.lead{animation:rise 1.6s .15s both ease-out}
+@keyframes rise{from{opacity:0}to{opacity:1}}
+
+/* film */
+.film{padding-top:clamp(72px,13vh,150px)}
+.film video{display:block;width:min(100%,calc(86svh * 16 / 9));aspect-ratio:16/9;height:auto;margin:0 auto;background:#000}
+.under{width:min(100%,calc(86svh * 16 / 9));margin:18px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 40px;font-size:14px;color:var(--quiet)}
+.under ul{display:flex;flex-wrap:wrap;gap:0 26px}
+
+/* what it is */
+.say{padding-top:clamp(120px,24vh,260px);padding-bottom:clamp(120px,24vh,260px)}
+.say>div{max-width:48em;margin:0 auto}
+.say h2{font-weight:200;font-size:clamp(25px,3.1vw,44px);line-height:1.85;color:var(--paper);word-break:keep-all;text-wrap:balance}
+.say p{margin-top:2.4em;max-width:36em}
+
+/* the paintings */
+.painting{background:var(--ground,var(--ink));padding-bottom:clamp(96px,18vh,200px)}
+.wide img{width:100%;height:min(100svh,56.25vw);object-fit:cover}
+.row{padding-top:clamp(48px,8vh,92px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"title text cap" "title pics pics";column-gap:clamp(26px,5vw,88px);align-items:start}
+.row h2{grid-area:title}.row .text{grid-area:text}.row .cap{grid-area:cap}.row .pics{grid-area:pics}
+.row h2{font-weight:200;font-size:clamp(40px,4.6vw,72px);line-height:1.1;letter-spacing:.12em;color:var(--paper)}
+.row h2 span{color:var(--gold);margin-bottom:.34em;display:inline-block}
+.row .text{padding-top:.5em;max-width:33em}
+.row .text p+p{margin-top:1em}
+.time{font-size:14px;letter-spacing:.1em;color:var(--quiet);font-variant-numeric:tabular-nums}
+.cap{font-weight:400;font-size:clamp(16px,1.35vw,20px);line-height:2.1;letter-spacing:.3em;color:var(--paper)}
+.cap span{display:block}
+.cap span:nth-child(2){margin-top:1.6em}
+.cap span:nth-child(3){margin-top:3.2em}
+.pics{margin-top:clamp(48px,8vh,92px);display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(10px,1.2vw,20px)}
+.pics figure{grid-column:span 2}
+.pics .half{grid-column:span 3}
+.pics img{aspect-ratio:16/9;object-fit:cover}
+figcaption{margin-top:8px;font-size:13px;line-height:1.7;letter-spacing:.06em;color:var(--quiet)}
+.end{display:block}
+
+/* walk in */
+.enter{padding-bottom:clamp(96px,18vh,200px)}
+.enter .row{grid-template-areas:"title text cap"}.enter .gate{grid-area:title}.enter .places{grid-area:cap}
+.screen{padding-top:clamp(40px,7vh,90px)}
+.screen img{width:min(100%,calc(92svh * 1.6));margin:0 auto}
+.gate{display:flex;flex-direction:column;align-items:center;gap:34px}
+.gate a{display:grid;place-items:center;width:68px;height:104px;background:var(--cinnabar);color:var(--paper);text-decoration:none;font-size:23px;letter-spacing:.3em;box-shadow:inset 0 0 0 4px var(--cinnabar),inset 0 0 0 5px rgba(244,233,220,.62);transition:background .2s}
+.gate a:hover{background:#b0543f}
+.gate a span{margin-top:.3em}
+.places{display:grid;direction:rtl;grid-template-columns:repeat(8,auto);gap:30px clamp(10px,1.1vw,18px);padding-top:.5em;font-size:16px;line-height:1.5;letter-spacing:.22em;color:var(--paper)}
+.places li{direction:ltr}
+.keys{margin-top:2em;display:grid;grid-template-columns:auto minmax(0,1fr);gap:.1em 1.5em;font-size:14px;line-height:1.95}
+.keys dt{color:var(--quiet);white-space:nowrap}
+
+/* stills */
+.stills h2,.how h2{font-weight:200;font-size:clamp(30px,3.4vw,52px);line-height:1.4;letter-spacing:.08em;color:var(--paper)}
+.grid{margin-top:clamp(34px,5vh,60px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,2.4vw,40px) clamp(10px,1.2vw,20px)}
+.grid a{display:block;text-decoration:none}
+.grid img{aspect-ratio:16/9}
+
+/* how */
+.how{padding-top:clamp(110px,20vh,220px);padding-bottom:clamp(90px,16vh,180px)}
+.nums{margin-top:clamp(40px,6vh,70px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px 24px}
+.nums b{display:block;font-weight:200;font-size:clamp(38px,4.6vw,70px);line-height:1.2;color:var(--paper);font-variant-numeric:lining-nums;white-space:nowrap}
+.nums small{font-size:14px;line-height:1.8;color:var(--quiet);display:block}
+.ways{margin-top:clamp(60px,9vh,110px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(36px,5vw,64px) clamp(36px,7vw,120px)}
+.ways h3{margin:0 0 .5em;font-weight:400;font-size:17px;letter-spacing:.14em;color:var(--gold)}
+.ways p{max-width:34em}
+
+footer{border-top:1px solid var(--line);padding-top:48px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;gap:30px 60px;justify-content:space-between;align-items:flex-start;font-size:14px;line-height:2;color:var(--quiet)}
+footer div{max-width:44em}
+footer .seal{font-size:44px}
+
+@media (max-width:860px){
+  .row,.enter .row{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"title text" "title cap" "pics pics";column-gap:26px}
+  .row .cap{justify-self:end;margin-top:34px}
+  .enter .row{grid-template-areas:"title text" "cap cap"}
+  .enter .places{justify-content:center;padding-top:48px}
+  .wide img{height:auto;aspect-ratio:16/10}
+  .grid,.nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ways{grid-template-columns:minmax(0,1fr)}
+  .grid a:last-child{grid-column:1/-1}
+}
+@media (max-width:560px){
+  body{line-height:1.95}
+  .pics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pics figure,.pics .half{grid-column:span 1}
+  .pics figure:first-child{grid-column:1/-1}
+  .keys{grid-template-columns:minmax(0,1fr);gap:0}
+  .keys dd{margin-bottom:.5em}
+}
+@media (orientation:portrait){
+  .name span{font-size:14px}.name div{margin-top:clamp(40px,7.5vh,110px);gap:18px}.hero picture img{object-position:50% 50%}
+  .hero::after{background:linear-gradient(to top,var(--ink) 0,rgba(11,10,13,.86) 16%,rgba(11,10,13,.5) 30%,rgba(11,10,13,0) 52%),radial-gradient(84% 50% at 100% 0,rgba(11,10,13,.54),rgba(11,10,13,0) 74%)}
+}
+@media (orientation:portrait) and (max-height:720px){.name{top:28px}.name span{font-size:13px;letter-spacing:.32em}}
+@media (max-height:520px) and (orientation:landscape){.name div{margin-top:64px}.lead small{display:none}}
+@media (prefers-reduced-motion:reduce){.name,.lead{animation:none}html{scroll-behavior:auto}a{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <picture>
+    <source media="(orientation:portrait)" srcset="media/page/hero_tall-1080.webp" width="1080" height="2160">
+    <img src="media/page/hero-1600.webp" srcset="media/page/hero-1600.webp 1600w,media/page/hero-2560.webp 2560w" sizes="100vw" width="2560" height="1440" fetchpriority="high" alt="水墨月夜：云海尽头，天宫立在浑天仪的环里，月中有玉兔，一个小小的人影驾云飞去">
+  </picture>
+  <div class="name">
+    <h1 class="tate">天宫</h1>
+    <div>
+      <span class="tate">西游记　第四回</span>
+      <svg class="seal" viewBox="0 0 22 22" role="img" aria-label="天宫印"><path d="M12.5 3L19.5 3 M12.5 6.2L19.5 6.2 M16 3L16 10.2 M12.5 19L12.5 10.2L19.5 10.2L19.5 19 M16 10.2L16 13.6 M14.8 19L14.8 13.6L17.2 13.6L17.2 19 M6 2.4L6 4.6 M2.5 8.2L2.5 4.6L9.5 4.6L9.5 8.2 M4.2 7.6L7.8 7.6L7.8 11.2L4.2 11.2L4.2 7.6 M6 11.2L6 13.4 M3 13.4L9 13.4L9 19L3 19L3 13.4"/></svg>
+    </div>
+  </div>
+  <div class="lead pad">
+    <p><span class="nb">一部 168 秒的影片，</span><wbr><span class="nb">一座可以走进去的天宫。</span><small lang="en">The Celestial Palace. A film of 168 seconds and a palace you can walk into, drawn by code.</small></p>
+    <nav class="go" aria-label="去处"><a href="#film">看片</a><a href="roam/">入宫</a><a href="https://github.com/dososo/tiangong">源码</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="film pad" id="film" aria-label="影片">
+  <video id="v" controls playsinline preload="none" poster="media/page/gold-1600.webp" width="1920" height="1080" aria-label="影片《天宫》，168 秒">
+    <source src="media/tiangong-1080p-hevc.mp4" type='video/mp4; codecs="hvc1.2.4.L120.90, mp4a.40.2"'>
+    <source src="media/tiangong-720p.mp4" type='video/mp4; codecs="avc1.64001F, mp4a.40.2"'>
+    这个浏览器放不了视频，请<a href="https://github.com/dososo/tiangong/releases/tag/v1.0.0">到发布页下载</a>。
+  </video>
+  <div class="under">
+    <p>168 秒，每秒 24 帧。请戴耳机，关灯看。</p>
+    <ul>
+      <li><a href="https://github.com/dososo/tiangong/releases/download/v1.0.0/tiangong_4k.mp4">4K 母版，847 MB</a></li>
+      <li><a href="https://github.com/dososo/tiangong/releases/download/v1.0.0/tiangong_1080p.mp4">1080p，399 MB</a></li>
+      <li><a href="https://github.com/dososo/tiangong/releases/download/v1.0.0/tiangong_score.m4a">配乐</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="say pad">
+  <div>
+    <h2>猴王头一回上天，《西游记》用一段赋写他看见了什么。这部影片照着那段赋，用代码把天宫造了一遍。</h2>
+    <p>没有模型文件，没有贴图文件，没有第三方三维引擎，也没有用生成式的图像和视频模型。光、云、檐角、龙鳞，都是这个仓库里的代码逐像素算出来的。画面依次走过四种中国画，最后回到一个点。</p>
+  </div>
+</section>
+
+<section class="painting" style="--ground:#0b0b10">
+  <figure class="wide"><img loading="lazy" src="media/page/ink-1200.webp" srcset="media/page/ink-1200.webp 1200w,media/page/ink-2000.webp 2000w" sizes="100vw" width="2000" height="1125" alt="水墨月夜，行者驾筋斗云掠过云海，远处天宫立在环心"></figure>
+  <div class="row pad">
+    <h2 class="tate"><span>一</span>水墨</h2>
+    <div class="text"><p class="time">00:00 – 00:16</p><p>只有墨、月、云。一个金点从云海上飞来，越飞越快。</p><p>那架巨大的环是浑天仪，古人量天的仪器。画里把量天的仪器放大成了天，宫在环心，日月沿着环走。</p></div>
+    <p class="cap tate"><span>初登上界</span><span>乍入天堂</span></p>
+  </div>
+</section>
+
+<section class="painting" style="--ground:#0c0e0f">
+  <figure class="wide"><img loading="lazy" src="media/page/jade-1200.webp" srcset="media/page/jade-1200.webp 1200w,media/page/jade-2000.webp 2000w" sizes="100vw" width="2000" height="1125" alt="青绿山水里的天宫：石青的天，三重圆檐的凌霄殿，四周是莲台上的宫殿"></figure>
+  <div class="row pad">
+    <h2 class="tate"><span>二</span>青绿与金碧</h2>
+    <div class="text"><p class="time">00:16 – 01:28</p><p>第一缕光爬上龙柱，鳞片一片一片亮起来。门开，金光灌满画面，宫殿从金里显形，再转成石青石绿。</p><p>场景里有三十三座宫、七十二重殿，数目照着原文。南天门总宽 430 米，中间那道门洞 84 米宽，130 米高。</p></div>
+    <p class="cap tate"><span>金光万道滚红霓</span><span>瑞气千条喷紫雾</span></p>
+    <div class="pics five">
+      <figure class="half"><img loading="lazy" src="media/page/gate-700.webp" srcset="media/page/gate-700.webp 700w,media/page/gate-1200.webp 1200w" sizes="(max-width:560px) 92vw,46vw" width="1200" height="675" alt="南天门全貌，四根蟠龙柱，左右是持兵的天将"><figcaption>南天门</figcaption></figure>
+      <figure class="half"><img loading="lazy" src="media/page/dragon-700.webp" srcset="media/page/dragon-700.webp 700w,media/page/dragon-1200.webp 1200w" sizes="(max-width:560px) 46vw,46vw" width="1200" height="675" alt="赤须龙首近景，金鳞红须"><figcaption>赤须龙</figcaption></figure>
+      <figure><img loading="lazy" src="media/page/doors-700.webp" srcset="media/page/doors-700.webp 700w,media/page/doors-1200.webp 1200w" sizes="(max-width:560px) 46vw,30vw" width="1200" height="675" alt="门开，御道尽头是凌霄殿"><figcaption>门开</figcaption></figure>
+      <figure><img loading="lazy" src="media/page/corridor-700.webp" srcset="media/page/corridor-700.webp 700w,media/page/corridor-1200.webp 1200w" sizes="(max-width:560px) 46vw,30vw" width="1200" height="675" alt="环着宫殿的回廊，红柱绿瓦"><figcaption>复道回廊</figcaption></figure>
+      <figure><img loading="lazy" src="media/page/apsara-700.webp" srcset="media/page/apsara-700.webp 700w,media/page/apsara-1200.webp 1200w" sizes="(max-width:560px) 46vw,30vw" width="1200" height="675" alt="飞天成列，飘带横过天空"><figcaption>飞天</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="painting" style="--ground:#0a0b10">
+  <figure class="wide"><img loading="lazy" src="media/page/rabbit-1200.webp" srcset="media/page/rabbit-1200.webp 1200w,media/page/rabbit-2000.webp 2000w" sizes="100vw" width="2000" height="1125" alt="月坛：巨大的满月贴着殿顶，月中玉兔捣药，殿旁一棵桂树"></figure>
+  <div class="row pad">
+    <h2 class="tate"><span>三</span>夜空与暮色</h2>
+    <div class="text"><p class="time">01:28 – 02:00</p><p>太阳从天宫底下飞过，月亮贴着坛边走。钟鼓响，万圣朝王，日轮升到殿顶，成了圆光。</p><p>日里有乌，月里有兔，是原文里就有的。玉帝始终没有露面，只有光。</p></div>
+    <p class="cap tate"><span>参圣金乌着底飞</span><span>朝王玉兔坛边过</span></p>
+    <div class="pics">
+      <figure><img loading="lazy" src="media/page/crow-700.webp" srcset="media/page/crow-700.webp 700w,media/page/crow-1200.webp 1200w" sizes="(max-width:560px) 92vw,30vw" width="1200" height="675" alt="从天宫底下飞过的太阳，日中有三足乌"><figcaption>金乌</figcaption></figure>
+      <figure><img loading="lazy" src="media/page/court-700.webp" srcset="media/page/court-700.webp 700w,media/page/court-1200.webp 1200w" sizes="(max-width:560px) 46vw,30vw" width="1200" height="675" alt="暮色里的丹墀，百官列在御道两侧"><figcaption>丹墀</figcaption></figure>
+      <figure><img loading="lazy" src="media/page/audience-700.webp" srcset="media/page/audience-700.webp 700w,media/page/audience-1200.webp 1200w" sizes="(max-width:560px) 46vw,30vw" width="1200" height="675" alt="万圣朝王，日轮升到凌霄殿顶"><figcaption>万圣朝王</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="painting" style="--ground:#0a0a0c">
+  <figure class="wide"><img loading="lazy" src="media/page/caisson-1200.webp" srcset="media/page/caisson-1200.webp 1200w,media/page/caisson-2000.webp 2000w" sizes="100vw" width="2000" height="1125" alt="仰看三十三重天，一圈套一圈的莲台像一座没有顶的藻井，两条龙在中间盘绕"></figure>
+  <div class="row pad">
+    <h2 class="tate"><span>四</span>藻井与曼荼罗</h2>
+    <div class="text"><p class="time">02:00 – 02:33</p><p>三十三重天，抬头看是一座没有顶的藻井，低头看是一幅曼荼罗。三十三声钟，一重一声，一声一重。</p><p>曼荼罗再往后退，原来是一只眼睛的瞳孔。典出《维摩诘所说经》：以须弥之高广内芥子中，无所增减。</p></div>
+    <div class="pics">
+      <figure><img loading="lazy" src="media/page/mandala-700.webp" srcset="media/page/mandala-700.webp 700w,media/page/mandala-1200.webp 1200w" sizes="(max-width:560px) 92vw,30vw" width="1200" height="675" alt="从最高处俯看三十三重天，一幅圆形的曼荼罗"><figcaption>俯观</figcaption></figure>
+      <figure><img loading="lazy" src="media/page/eye-700.webp" srcset="media/page/eye-700.webp 700w,media/page/eye-1200.webp 1200w" sizes="(max-width:560px) 46vw,30vw" width="1200" height="675" alt="曼荼罗收进一只眼睛的虹膜"><figcaption>芥子须弥</figcaption></figure>
+      <figure><img loading="lazy" src="media/page/golden_eye-700.webp" srcset="media/page/golden_eye-700.webp 700w,media/page/golden_eye-1200.webp 1200w" sizes="(max-width:560px) 46vw,30vw" width="1200" height="675" alt="行者的金睛，瞳孔里是整座天宫"><figcaption>金睛</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="painting" style="--ground:#100b0b">
+  <figure class="wide"><img loading="lazy" src="media/page/home-1200.webp" srcset="media/page/home-1200.webp 1200w,media/page/home-2000.webp 2000w" sizes="100vw" width="2000" height="1125" alt="暮色天宫，落日正在殿顶，行者驾云的小小背影"></figure>
+  <div class="row pad">
+    <h2 class="tate"><span>合</span>一个点</h2>
+    <div class="text"><p class="time">02:33 – 02:48</p><p>眨眼，黑，半秒真正的无声。再亮起来，天宫还在，行者只是画里一个小小的背影。</p><p>以钟开篇，以磬收尾，取《孟子》「金声玉振」。</p></div>
+    <p class="cap tate"><span>猴王有分来天境</span><span>不堕人间点污泥</span></p>
+  </div>
+</section>
+
+<section class="enter" id="enter">
+  <figure class="screen pad"><img loading="lazy" src="media/page/roam-1200.webp" srcset="media/page/roam-1200.webp 1200w,media/page/roam-2000.webp 2000w" sizes="92vw" width="2000" height="1250" alt="漫游页截图：白天的长桥，右下角是日晷，下方是十五处去处"></figure>
+  <div class="row pad">
+    <div class="gate"><h2 class="tate">入宫</h2><a href="roam/" aria-label="入宫，打开漫游页"><span class="tate">入宫</span></a></div>
+    <div class="text">
+      <p>同一座天宫，也装在一个 2.5 MB 的网页里。不用安装，存到本地断网也能走。</p>
+      <p>十五处去处，十二时辰随手拨。可以乘鹤、骑龙、跟着飞天，也可以召来行者。按 <span class="nb">F 定格</span>，画面会一帧一帧攒成一张静帧。</p>
+      <dl class="keys">
+        <dt>电脑</dt><dd>拖动环顾，滚轮进退，双击飞往所指之处；<span class="nb">W A S D</span> 走动，空格与 Q 升降，<span class="nb">[ ]</span> 换一处，<span class="nb">F 定格</span>，<span class="nb">H 隐去界面</span></dd>
+        <dt>手机</dt><dd>单指环顾，双指开合进退，双指拖移升降，双击飞往所指之处</dd>
+      </dl>
+      <p class="time" style="margin-top:1.6em;letter-spacing:.02em">建议用电脑上的 Chrome 或 Safari。已在 Chrome、WebKit 和 iPhone 模拟器里测过；真机、Firefox 和低端显卡还没有测。</p>
+    </div>
+    <ul class="places" aria-label="十五处去处"><li class="tate">云海</li><li class="tate">南天门</li><li class="tate">龙柱</li><li class="tate">天门</li><li class="tate">长桥</li><li class="tate">回廊</li><li class="tate">丹墀</li><li class="tate">飞天</li><li class="tate">朝会</li><li class="tate">凌霄</li><li class="tate">日坛</li><li class="tate">月坛</li><li class="tate">仰观</li><li class="tate">俯观</li><li class="tate">行者</li></ul>
+  </div>
+</section>
+
+<section class="stills pad">
+  <h2>二十一帧</h2>
+  <div class="grid">
+    <a href="media/stills/01.jpg"><figure><img loading="lazy" src="media/stills/01-720.webp" width="720" height="405" alt="静帧：初登上界"><figcaption>初登上界</figcaption></figure></a>
+    <a href="media/stills/02.jpg"><figure><img loading="lazy" src="media/stills/02-720.webp" width="720" height="405" alt="静帧：龙柱晨光"><figcaption>龙柱晨光</figcaption></figure></a>
+    <a href="media/stills/03.jpg"><figure><img loading="lazy" src="media/stills/03-720.webp" width="720" height="405" alt="静帧：赤须龙"><figcaption>赤须龙</figcaption></figure></a>
+    <a href="media/stills/04.jpg"><figure><img loading="lazy" src="media/stills/04-720.webp" width="720" height="405" alt="静帧：南天门"><figcaption>南天门</figcaption></figure></a>
+    <a href="media/stills/05.jpg"><figure><img loading="lazy" src="media/stills/05-720.webp" width="720" height="405" alt="静帧：门开"><figcaption>门开</figcaption></figure></a>
+    <a href="media/stills/06.jpg"><figure><img loading="lazy" src="media/stills/06-720.webp" width="720" height="405" alt="静帧：金碧"><figcaption>金碧</figcaption></figure></a>
+    <a href="media/stills/07.jpg"><figure><img loading="lazy" src="media/stills/07-720.webp" width="720" height="405" alt="静帧：三十三座天宫"><figcaption>三十三座天宫</figcaption></figure></a>
+    <a href="media/stills/08.jpg"><figure><img loading="lazy" src="media/stills/08-720.webp" width="720" height="405" alt="静帧：青绿"><figcaption>青绿</figcaption></figure></a>
+    <a href="media/stills/09.jpg"><figure><img loading="lazy" src="media/stills/09-720.webp" width="720" height="405" alt="静帧：复道回廊"><figcaption>复道回廊</figcaption></figure></a>
+    <a href="media/stills/10.jpg"><figure><img loading="lazy" src="media/stills/10-720.webp" width="720" height="405" alt="静帧：龙凤翱翔"><figcaption>龙凤翱翔</figcaption></figure></a>
+    <a href="media/stills/11.jpg"><figure><img loading="lazy" src="media/stills/11-720.webp" width="720" height="405" alt="静帧：飞天"><figcaption>飞天</figcaption></figure></a>
+    <a href="media/stills/12.jpg"><figure><img loading="lazy" src="media/stills/12-720.webp" width="720" height="405" alt="静帧：金乌着底飞"><figcaption>金乌着底飞</figcaption></figure></a>
+    <a href="media/stills/13.jpg"><figure><img loading="lazy" src="media/stills/13-720.webp" width="720" height="405" alt="静帧：玉兔坛边过"><figcaption>玉兔坛边过</figcaption></figure></a>
+    <a href="media/stills/14.jpg"><figure><img loading="lazy" src="media/stills/14-720.webp" width="720" height="405" alt="静帧：丹墀"><figcaption>丹墀</figcaption></figure></a>
+    <a href="media/stills/15.jpg"><figure><img loading="lazy" src="media/stills/15-720.webp" width="720" height="405" alt="静帧：万圣朝王"><figcaption>万圣朝王</figcaption></figure></a>
+    <a href="media/stills/16.jpg"><figure><img loading="lazy" src="media/stills/16-720.webp" width="720" height="405" alt="静帧：仰观藻井"><figcaption>仰观藻井</figcaption></figure></a>
+    <a href="media/stills/17.jpg"><figure><img loading="lazy" src="media/stills/17-720.webp" width="720" height="405" alt="静帧：三十三重天"><figcaption>三十三重天</figcaption></figure></a>
+    <a href="media/stills/18.jpg"><figure><img loading="lazy" src="media/stills/18-720.webp" width="720" height="405" alt="静帧：俯观曼荼罗"><figcaption>俯观曼荼罗</figcaption></figure></a>
+    <a href="media/stills/19.jpg"><figure><img loading="lazy" src="media/stills/19-720.webp" width="720" height="405" alt="静帧：芥子须弥"><figcaption>芥子须弥</figcaption></figure></a>
+    <a href="media/stills/20.jpg"><figure><img loading="lazy" src="media/stills/20-720.webp" width="720" height="405" alt="静帧：金睛"><figcaption>金睛</figcaption></figure></a>
+    <a href="media/stills/21.jpg"><figure><img loading="lazy" src="media/stills/21-720.webp" width="720" height="405" alt="静帧：天宫"><figcaption>天宫</figcaption></figure></a>
+  </div>
+</section>
+
+<section class="how pad">
+  <h2>怎么做的</h2>
+  <div class="nums">
+    <div><b>4,032</b><small>帧，逐帧算出来</small></div>
+    <div><b>5.8</b><small>小时，渲完 4K 母版（M4 Pro）</small></div>
+    <div><b>540</b><small>KB 的 JS 与 GLSL 源码</small></div>
+    <div><b>0</b><small>个模型、贴图、第三方引擎</small></div>
+  </div>
+  <div class="ways">
+    <div><h3>光与云</h3><p>原生 WebGL2 写的渲染器。天空按公式算，日晕、幻日都在；云海是体积云，光线一步一步走进去。每一帧叠 24 到 72 次采样，运动模糊和景深都是积出来的。</p></div>
+    <div><h3>造型</h3><p>檐角、斗拱、匾额、缠枝莲由参数生成；龙、飞天、行者先写成距离场，再取成面。北斗七星按真实比例排，银河也在。</p></div>
+    <div><h3>声音</h3><p>编钟、磬、大鼓、箫、笙、人声用程序合成，古琴、琵琶、古筝、锣鼓和管弦用公开授权的采样演奏，署名都在 <a href="https://github.com/dososo/tiangong/blob/main/CREDITS.md">CREDITS</a>。</p></div>
+    <div><h3>漫游</h3><p>每帧只算一个样本，靠前后帧累积补回细节；分辨率按显卡余量自动升降。<span class="nb">F 定格</span>走的是成片同一条渲染路径。</p></div>
+  </div>
+</section>
+</main>
+
+<footer class="pad">
+  <div>
+    <p>文字出自《西游记》第四回，逐字核自维基文库。代码、影片、静帧与配乐以 <a href="https://github.com/dososo/tiangong/blob/main/LICENSE">Apache-2.0</a> 开源，<span class="nb">© 2026 BLCaptain</span>；采样与字体各有授权，见 <a href="https://github.com/dososo/tiangong/blob/main/CREDITS.md">CREDITS</a> 与 <a href="https://github.com/dososo/tiangong/blob/main/NOTICE">NOTICE</a>。</p>
+    <p>机器检查 447 项全部通过，没有验到的也写明了：<a href="https://github.com/dososo/tiangong/blob/main/docs/verification/VERIFICATION_REPORT.md">验证报告</a>。</p>
+  </div>
+  <svg class="seal" viewBox="0 0 22 22" aria-hidden="true"><path d="M12.5 3L19.5 3 M12.5 6.2L19.5 6.2 M16 3L16 10.2 M12.5 19L12.5 10.2L19.5 10.2L19.5 19 M16 10.2L16 13.6 M14.8 19L14.8 13.6L17.2 13.6L17.2 19 M6 2.4L6 4.6 M2.5 8.2L2.5 4.6L9.5 4.6L9.5 8.2 M4.2 7.6L7.8 7.6L7.8 11.2L4.2 11.2L4.2 7.6 M6 11.2L6 13.4 M3 13.4L9 13.4L9 19L3 19L3 13.4"/></svg>
+</footer>
+
+<script>
+// Should the picked copy fail to decode, go on with the plain H.264 one from the same second.
+(() => { const v = document.getElementById('v'); let tried = false; v.addEventListener('error', () => { if (tried) return; tried = true; const t = v.currentTime || 0; v.src = 'media/tiangong-720p.mp4'; v.addEventListener('loadedmetadata', () => { v.currentTime = t; }, { once: true }); v.play().catch(() => {}); }); })();
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+// Open the roaming page in Safari of an iPhone simulator (headless: no window is shown), drive it from inside, collect what it reports, take screenshots.
+// node tools/webkit/ios_test.mjs <device udid> <out dir> [page]
+import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path'; import { execFileSync } from 'node:child_process';
+const [,, udid, outd, pg = 'delivery/tiangong_explore.html'] = process.argv; const ROOT = path.resolve(path.dirname(decodeURIComponent(new URL(import.meta.url).pathname)), '../..'); fs.mkdirSync(outd, { recursive: true });
+const sim = (...a) => execFileSync('xcrun', ['simctl', ...a], { encoding: 'utf8', timeout: 240000 }); const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const steps = `<script type="module">
+const sleep = (ms) => new Promise(r => setTimeout(r, ms)), post = (o) => fetch('/post', { method: 'POST', body: JSON.stringify(o) }).catch(() => {}); const err = []; addEventListener('error', e => err.push(String(e.message))); addEventListener('unhandledrejection', e => err.push(String(e.reason && e.reason.message || e.reason)));
+(async () => { const t0 = performance.now(); await post({ k: 'open', ua: navigator.userAgent, size: [innerWidth, innerHeight, devicePixelRatio], touch: navigator.maxTouchPoints });
+while (!(window.tg && document.querySelector('#start.ready')) && !document.querySelector('#start.bad') && performance.now() - t0 < 150000) await sleep(150);
+const ready = !!document.querySelector('#start.ready'); await post({ k: 'ready', ready, ms: Math.round(performance.now() - t0), msg: document.querySelector('#start p')?.textContent, err }); if (!ready) return post({ k: 'done', err });
+const gl = tg.E.gl, cv = document.querySelector('#c'); await post({ k: 'gl', ext: gl.getSupportedExtensions(), out: [cv.width, cv.height], pace: tg.pace(), tq: tg.tq }); await sleep(2500); document.querySelector('#enter').click(); await sleep(1500);
+const fps = (ms) => new Promise(r => { let n = 0, f0 = 0, l = 0, w = 0; const f = (t) => { if (!f0) f0 = t; else { w = Math.max(w, t - l); n++; } l = t; if (t - f0 < ms) requestAnimationFrame(f); else r({ fps: +(n / (t - f0) * 1000).toFixed(1), worst: Math.round(w) }); }; requestAnimationFrame(f); });
+for (const i of [0, 1, 2, 4, 6, 9, 11, 12, 13, 14]) { tg.select(i, { dur: .05 }); await sleep(9000); const f = await fps(3000); await post({ k: 'view', id: tg.S[i].v.id, name: tg.S[i].v.name, ...f, scale: tg.scale(), gl: gl.getError(), lost: gl.isContextLost(), err }); await sleep(2600); }
+document.querySelector('#help')?.click(); await sleep(400); await post({ k: 'help' }); await sleep(2600); await post({ k: 'done', err }); })();
+</script>`;
+const log = []; let shots = 0, done = null; const fin = new Promise(r => done = r);
+const s = http.createServer((q, r) => { if (q.method === 'POST') { const c = []; q.on('data', d => c.push(d)); q.on('end', async () => { let o = {}; try { o = JSON.parse(Buffer.concat(c).toString()); } catch {} log.push(o); console.log(JSON.stringify(o).slice(0, 400)); r.writeHead(200); r.end('ok'); if (['view', 'ready', 'help'].includes(o.k)) { await sleep(700); try { sim('io', udid, 'screenshot', '--type=png', path.join(outd, `s${String(shots++).padStart(2, '0')}_${o.k}_${o.id || ''}.png`)); } catch (e) { console.log('shot failed', String(e).slice(0, 120)); } } if (o.k === 'done') done(); }); return; }
+  if (new URL(q.url, 'http://x').pathname !== '/') { r.writeHead(404); return r.end(); } r.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); r.end(fs.readFileSync(path.join(ROOT, pg), 'utf8').replace('</body>', () => steps + '</body>')); });
+await new Promise(r => s.listen(0, '127.0.0.1', r)); const url = `http://127.0.0.1:${s.address().port}/`; const was = /Booted/.test(sim('list', 'devices').split('\n').find(l => l.includes(udid)) || '');
+if (!was) { sim('boot', udid); } sim('bootstatus', udid, '-b'); await sleep(4000); sim('openurl', udid, url); const ok = await Promise.race([fin.then(() => true), sleep(330000).then(() => false)]);
+fs.writeFileSync(path.join(outd, 'log.json'), JSON.stringify({ schema_version: 1, time: new Date().toISOString(), udid, finished: ok, log }, null, 1)); if (!was) sim('shutdown', udid); console.log('finished', ok); process.exit(0);

@@ -1,0 +1,546 @@
+{
+ "schema_version": 1,
+ "page": "delivery/tiangong_explore.html",
+ "sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78",
+ "time": "2026-11-24T17:28:15.015Z",
+ "viewport": [
+  960,
+  600
+ ],
+ "passed": 61,
+ "total": 61,
+ "warnings": [
+  "performance warning: READ-usage buffer was written, then fenced, but written again before being read back. This discarded the shadow copy that was created to ac",
+  "WebGL: too many errors, no more errors will be reported to the console for this context."
+ ],
+ "checks": [
+  {
+   "id": "load",
+   "pass": true,
+   "info": {
+    "ms": 3119
+   }
+  },
+  {
+   "id": "fonts",
+   "pass": true,
+   "info": [
+    "TG UI:loaded",
+    "TG Serif:loaded",
+    "TG Title:loaded",
+    "TG Kai:loaded"
+   ]
+  },
+  {
+   "id": "enter",
+   "pass": true,
+   "info": {
+    "entered": true
+   }
+  },
+  {
+   "id": "opening starts by itself",
+   "pass": true
+  },
+  {
+   "id": "monkey leads the way",
+   "pass": true,
+   "info": 163.0714693344272
+  },
+  {
+   "id": "opening arrives at the south gate",
+   "pass": true,
+   "info": {
+    "pos": [
+     154,
+     109,
+     5687
+    ],
+    "hour": 6.4
+   }
+  },
+  {
+   "id": "dawn on arrival",
+   "pass": true
+  },
+  {
+   "id": "gate doors open",
+   "pass": true,
+   "info": 1
+  },
+  {
+   "id": "caption shown",
+   "pass": true,
+   "info": "只见那南天门碧沉沉琉璃造就明幌幌宝玉妆成"
+  },
+  {
+   "id": "drag looks round (grab: dragging right turns left)",
+   "pass": true,
+   "info": {
+    "a": [
+     -2.875506340964874,
+     0.23679187359044152
+    ],
+    "b": [
+     -2.6334103381090723,
+     0.2973158743043923
+    ]
+   }
+  },
+  {
+   "id": "W glides forward",
+   "pass": true,
+   "info": {
+    "along": 167
+   }
+  },
+  {
+   "id": "gliding comes to rest",
+   "pass": true,
+   "info": {
+    "speed": 0.002
+   }
+  },
+  {
+   "id": "wheel down draws back",
+   "pass": true,
+   "info": {
+    "along": -72.2
+   }
+  },
+  {
+   "id": "space rises",
+   "pass": true,
+   "info": {
+    "dy": 87.5
+   }
+  },
+  {
+   "id": "fifteen places",
+   "pass": true,
+   "info": 15
+  },
+  {
+   "id": "place 云海",
+   "pass": true,
+   "info": {
+    "id": "A",
+    "name": "云海",
+    "d": 0,
+    "hour": 0,
+    "want": 0,
+    "cap": "初登上界乍入天堂",
+    "capWant": "初登上界乍入天堂",
+    "kUp": 0,
+    "gl": 0,
+    "cur": "云海"
+   }
+  },
+  {
+   "id": "place 南天门",
+   "pass": true,
+   "info": {
+    "id": "B3",
+    "name": "南天门",
+    "d": 0,
+    "hour": 6.4,
+    "want": 6.4,
+    "cap": "只见那南天门碧沉沉琉璃造就明幌幌宝玉妆成",
+    "capWant": "只见那南天门碧沉沉琉璃造就明幌幌宝玉妆成",
+    "kUp": 0,
+    "gl": 0,
+    "cur": "南天门"
+   }
+  },
+  {
+   "id": "place 龙柱",
+   "pass": true,
+   "info": {
+    "id": "B2",
+    "name": "龙柱",
+    "d": 0,
+    "hour": 6.3,
+    "want": 6.3,
+    "cap": "柱上缠绕着金鳞耀日赤须龙",
+    "capWant": "柱上缠绕着金鳞耀日赤须龙",
+    "kUp": 0,
+    "gl": 0,
+    "cur": "龙柱"
+   }
+  },
+  {
+   "id": "place 天门",
+   "pass": true,
+   "info": {
+    "id": "C",
+    "name": "天门",
+    "d": 0,
+    "hour": 9.5,
+    "want": 9.5,
+    "cap": "金光万道滚红霓瑞气千条喷紫雾",
+    "capWant": "金光万道滚红霓瑞气千条喷紫雾",
+    "kUp": 0,
+    "gl": 0,
+    "cur": "天门"
+   }
+  },
+  {
+   "id": "place 长桥",
+   "pass": true,
+   "info": {
+    "id": "D",
+    "name": "长桥",
+    "d": 0,
+    "hour": 14,
+    "want": 14,
+    "cap": "这天上有三十三座天宫又有七十二重宝殿",
+    "capWant": "这天上有三十三座天宫又有七十二重宝殿",
+    "kUp": 0,
+    "gl": 0,
+    "cur": "长桥"
+   }
+  },
+  {
+   "id": "place 回廊",
+   "pass": true,
+   "info": {
+    "id": "E1",
+    "name": "回廊",
+    "d": 0,
+    "hour": 8.2,
+    "want": 8.2,
+    "cap": "复道回廊处处玲珑剔透",
+    "capWant": "复道回廊处处玲珑剔透",
+    "kUp": 0,
+    "gl": 0,
+    "cur": "回廊"
+   }
+  },
+  {
+   "id": "place 丹墀",
+   "pass": true,
+   "info": {
+    "id": "E2",
+    "name": "丹墀",
+    "d": 0,
+    "hour": 10,
+    "want": 10,
+    "cap": "三檐四簇层层龙凤翱翔",
+    "capWant": "三檐四簇层层龙凤翱翔",
+    "kUp": 0,
+    "gl": 0,
+    "cur": "丹墀"
+   }
+  },
+  {
+   "id": "place 飞天",
+   "pass": true,
+   "info": {
+    "id": "E3",
+    "name": "飞天",
+    "d": 225.5,
+    "hour": 8.6,
+    "want": 8.6,
+    "cap": "飞天散花",
+    "capWant": "飞天散花",
+    "ride": "aps",
+    "kUp": 0,
+    "gl": 0
+   }
+  },
+  {
+   "id": "place 朝会",
+   "pass": true,
+   "info": {
+    "id": "G1",
+    "name": "朝会",
+    "d": 0,
+    "hour": 18,
+    "want": 18,
+    "cap": "金钟撞动三曹神表进丹墀",
+    "capWant": "金钟撞动三曹神表进丹墀",
+    "ride": null,
+    "kUp": 0,
+    "gl": 0,
+    "cur": "朝会"
+   }
+  },
+  {
+   "id": "place 凌霄",
+   "pass": true,
+   "info": {
+    "id": "G2",
+    "name": "凌霄",
+    "d": 0,
+    "hour": 18.1,
+    "want": 18.1,
+    "cap": "天鼓鸣时万圣朝王参玉帝",
+    "capWant": "天鼓鸣时万圣朝王参玉帝",
+    "ride": null,
+    "kUp": 0,
+    "gl": 0,
+    "cur": "凌霄"
+   }
+  },
+  {
+   "id": "place 日坛",
+   "pass": true,
+   "info": {
+    "id": "F1",
+    "name": "日坛",
+    "d": 0,
+    "hour": 20.8,
+    "want": 20.8,
+    "cap": "参圣金乌着底飞",
+    "capWant": "参圣金乌着底飞",
+    "ride": null,
+    "kUp": 0,
+    "gl": 0,
+    "cur": "日坛"
+   }
+  },
+  {
+   "id": "place 月坛",
+   "pass": true,
+   "info": {
+    "id": "F2",
+    "name": "月坛",
+    "d": 0,
+    "hour": 21.6,
+    "want": 21.6,
+    "cap": "朝王玉兔坛边过",
+    "capWant": "朝王玉兔坛边过",
+    "ride": null,
+    "kUp": 0,
+    "gl": 0,
+    "cur": "月坛"
+   }
+  },
+  {
+   "id": "place 仰观",
+   "pass": true,
+   "info": {
+    "id": "H1",
+    "name": "仰观",
+    "d": 0,
+    "hour": 18.2,
+    "want": 18.2,
+    "cap": "三十三座天宫",
+    "capWant": "三十三座天宫",
+    "ride": null,
+    "kUp": 0.99,
+    "gl": 0,
+    "cur": "仰观"
+   }
+  },
+  {
+   "id": "place 俯观",
+   "pass": true,
+   "info": {
+    "id": "H2",
+    "name": "俯观",
+    "d": 0,
+    "hour": 18.2,
+    "want": 18.2,
+    "cap": "三十三座天宫",
+    "capWant": "三十三座天宫",
+    "ride": null,
+    "kUp": 1,
+    "gl": 0,
+    "cur": "俯观"
+   }
+  },
+  {
+   "id": "place 行者",
+   "pass": true,
+   "info": {
+    "id": "J",
+    "name": "行者",
+    "d": 0,
+    "hour": 18,
+    "want": 18,
+    "cap": "猴王有分来天境不堕人间点污泥",
+    "capWant": "猴王有分来天境不堕人间点污泥",
+    "ride": null,
+    "kUp": 0,
+    "gl": 0,
+    "cur": "行者"
+   }
+  },
+  {
+   "id": "[ goes to the place before",
+   "pass": true
+  },
+  {
+   "id": "] goes to the place after",
+   "pass": true
+  },
+  {
+   "id": "M: the Monkey King takes the cloud",
+   "pass": true
+  },
+  {
+   "id": "he flies",
+   "pass": true,
+   "info": "146"
+  },
+  {
+   "id": "M again: he leaves",
+   "pass": true
+  },
+  {
+   "id": "ride 仙鹤",
+   "pass": true,
+   "info": {
+    "moved": 42.5,
+    "off": 0.4
+   }
+  },
+  {
+   "id": "ride 神龙",
+   "pass": true,
+   "info": {
+    "moved": 78.5,
+    "off": 1.9
+   }
+  },
+  {
+   "id": "ride 飞天",
+   "pass": true,
+   "info": {
+    "moved": 19.2,
+    "off": 0.1
+   }
+  },
+  {
+   "id": "looking round while riding holds",
+   "pass": true
+  },
+  {
+   "id": "walking leaves the ride",
+   "pass": true
+  },
+  {
+   "id": "dial top is noon",
+   "pass": true,
+   "info": 12
+  },
+  {
+   "id": "dial left is 卯 (six)",
+   "pass": true,
+   "info": 6
+  },
+  {
+   "id": "hub lets time run",
+   "pass": true,
+   "info": {
+    "h": 6,
+    "h2": [
+     true,
+     6.239984000000012
+    ]
+   }
+  },
+  {
+   "id": ". steps half an hour",
+   "pass": true,
+   "info": {
+    "from": 6.239984000000012,
+    "to": 6.739984000000014
+   }
+  },
+  {
+   "id": "dial answers to arrow keys",
+   "pass": true,
+   "info": {
+    "h3": 6.739984000000014,
+    "h4": 7.239984000000014
+   }
+  },
+  {
+   "id": "double click flies there",
+   "pass": true,
+   "info": "4064"
+  },
+  {
+   "id": "T starts the tour",
+   "pass": true
+  },
+  {
+   "id": "dragging ends the tour",
+   "pass": true
+  },
+  {
+   "id": "help opens",
+   "pass": true
+  },
+  {
+   "id": "help closes",
+   "pass": true
+  },
+  {
+   "id": "H hides the interface",
+   "pass": true
+  },
+  {
+   "id": "N toggles sound",
+   "pass": true
+  },
+  {
+   "id": "audio context runs, music bed decoded",
+   "pass": true,
+   "info": "running"
+  },
+  {
+   "id": "interface fades when idle",
+   "pass": true
+  },
+  {
+   "id": "F starts a still",
+   "pass": true
+  },
+  {
+   "id": "still completes",
+   "pass": true,
+   "info": {
+    "w": 960,
+    "h": 600
+   }
+  },
+  {
+   "id": "still saves a PNG",
+   "pass": true,
+   "info": {
+    "name": "天宫-辰时.png",
+    "px": [
+     960,
+     600,
+     1286378
+    ]
+   }
+  },
+  {
+   "id": "back to roaming",
+   "pass": true
+  },
+  {
+   "id": "resize",
+   "pass": true,
+   "info": [
+    820,
+    620,
+    278,
+    210
+   ]
+  },
+  {
+   "id": "no WebGL error, context alive",
+   "pass": true
+  },
+  {
+   "id": "no script or console error",
+   "pass": true,
+   "info": []
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+PASS thirty-three tiers {"n":33,"y0":2500,"dy":1250}
+PASS thirty-three bells 33
+PASS the ascent starts at the same second in film and score [120,120]
+PASS every stroke falls within one frame (42 ms) of its crossing {"worst_ms":5,"mean_ms":0}
+PASS blink and closing eye match the score {"film":[149.35,152.15],"score":[149.35,152.15]}
+5/5

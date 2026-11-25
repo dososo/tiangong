@@ -1,0 +1,86 @@
+{
+  "checks" : [
+    {
+      "info" : {
+        "exportable" : true,
+        "playable" : true,
+        "readable" : true,
+        "seconds" : 168
+      },
+      "name" : "AVFoundation says it can play the file",
+      "passed" : true
+    },
+    {
+      "info" : {
+        "audio" : 1,
+        "video" : 1
+      },
+      "name" : "one picture track and one sound track",
+      "passed" : true
+    },
+    {
+      "info" : {
+        "codec" : "hvc1",
+        "fps" : 24,
+        "seconds" : 168,
+        "size" : [
+          3840,
+          2160
+        ],
+        "start" : 0
+      },
+      "name" : "picture format",
+      "passed" : true
+    },
+    {
+      "info" : [
+        "ITU_R_709_2",
+        "IEC_sRGB",
+        "ITU_R_709_2"
+      ],
+      "name" : "colour tags: Rec.709 primaries and matrix, sRGB curve",
+      "passed" : true
+    },
+    {
+      "info" : {
+        "cover_bytes" : 2659568,
+        "title" : "天宫"
+      },
+      "name" : "title and cover picture are stored in the file",
+      "passed" : true
+    },
+    {
+      "info" : {
+        "error" : "",
+        "expected" : 4032,
+        "frames" : 4032,
+        "seconds" : 6.5,
+        "status" : 2,
+        "undecoded" : 0
+      },
+      "name" : "every picture decodes",
+      "passed" : true
+    },
+    {
+      "info" : [
+        "0.041667"
+      ],
+      "name" : "even frame steps of 1/24 s",
+      "passed" : true
+    },
+    {
+      "info" : {
+        "first_pts" : 0,
+        "seconds" : 168,
+        "status" : 2
+      },
+      "name" : "every sound sample decodes",
+      "passed" : true
+    }
+  ],
+  "file" : "tiangong_4k.mp4",
+  "passed" : 8,
+  "schema_version" : 1,
+  "sha256" : "26f3413aef5cb076eda5da7c2af06cfcdbd00bd703d03cc04f143de086ad1074",
+  "total" : 8
+}

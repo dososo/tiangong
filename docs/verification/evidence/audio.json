@@ -1,0 +1,99 @@
+{
+ "schema_version": 1,
+ "file": "score_master.wav",
+ "sha256": "e27d4af42d6de3b1fd00663072d9b1b22df577c3d93be1f17636caf88167109a",
+ "time": "2026-11-24T17:18:17Z",
+ "passed": 10,
+ "total": 10,
+ "checks": [
+  {
+   "name": "48 kHz stereo, 168 s",
+   "passed": true,
+   "info": {
+    "sr": 48000,
+    "ch": 2,
+    "seconds": 168.0
+   }
+  },
+  {
+   "name": "no DC offset",
+   "passed": true,
+   "info": [
+    3.89e-06,
+    -2.39e-05
+   ]
+  },
+  {
+   "name": "left and right balanced within 1 dB",
+   "passed": true,
+   "info": {
+    "left": -17.55,
+    "right": -17.19
+   }
+  },
+  {
+   "name": "mono fold-down keeps the loudness (drop under 4 dB)",
+   "passed": true,
+   "info": {
+    "stereo": -17.37,
+    "mono": -18.92,
+    "side": -22.6
+   }
+  },
+  {
+   "name": "no stretch out of phase (0.4 s correlation above -0.3)",
+   "passed": true,
+   "info": {
+    "min": -0.13,
+    "at": 8.8,
+    "median": 0.4
+   }
+  },
+  {
+   "name": "head and tail start and end at silence",
+   "passed": true,
+   "info": {
+    "first": -240.0,
+    "last": -240.0
+   }
+  },
+  {
+   "name": "the black after the blink is the quietest place of the film",
+   "passed": true,
+   "info": {
+    "level": -105.86,
+    "at": 153.8,
+    "film_median": -20.24
+   }
+  },
+  {
+   "name": "no dropouts (0.1 s below -70 dB) outside the head, the tail and the blink",
+   "passed": true,
+   "info": [
+    153.6,
+    153.7,
+    153.8
+   ]
+  },
+  {
+   "name": "no isolated clicks",
+   "passed": true,
+   "info": {
+    "count": 0,
+    "first": []
+   }
+  },
+  {
+   "name": "spectrum: neither boomy nor thin (bass 60-250 Hz and mids 250-1000 Hz within 9 dB, treble 4-10 kHz above -35 dB)",
+   "passed": true,
+   "info": {
+    "20-60": -14.8,
+    "60-250": -6.6,
+    "250-1000": -1.8,
+    "1000-4000": -11.0,
+    "4000-10000": -26.9,
+    "10000-20000": -39.8
+   }
+  }
+ ]
+}

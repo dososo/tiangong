@@ -1,0 +1,23 @@
+PASS page visible and built {"ms": 3491, "msg": "点灯"}
+PASS entered null
+PASS sound running "running"
+PASS fifteen places 15
+PASS place 云海 {"fps": 56.7, "worst": 37, "scale": 0.72, "hour": 6.17, "gl": 0}
+PASS place 南天门 {"fps": 59.3, "worst": 26, "scale": 0.72, "hour": 6.4, "gl": 0}
+PASS place 龙柱 {"fps": 60, "worst": 20, "scale": 0.86, "hour": 6.3, "gl": 0}
+PASS place 天门 {"fps": 59.9, "worst": 22, "scale": 0.6, "hour": 9.5, "gl": 0}
+PASS place 长桥 {"fps": 60.1, "worst": 23, "scale": 0.5, "hour": 14, "gl": 0}
+PASS place 回廊 {"fps": 60, "worst": 20, "scale": 0.86, "hour": 8.2, "gl": 0}
+PASS place 丹墀 {"fps": 60.1, "worst": 24, "scale": 0.6, "hour": 10, "gl": 0}
+PASS place 飞天 {"fps": 60, "worst": 22, "scale": 0.6, "hour": 8.6, "gl": 0}
+PASS place 朝会 {"fps": 59.9, "worst": 25, "scale": 0.5, "hour": 18, "gl": 0}
+PASS place 凌霄 {"fps": 56.4, "worst": 24, "scale": 0.6, "hour": 18.1, "gl": 0}
+PASS place 日坛 {"fps": 60, "worst": 19, "scale": 0.86, "hour": 20.8, "gl": 0}
+PASS place 月坛 {"fps": 60.2, "worst": 25, "scale": 0.72, "hour": 21.6, "gl": 0}
+PASS place 仰观 {"fps": 59.5, "worst": 28, "scale": 0.6, "hour": 18.2, "gl": 0}
+PASS place 俯观 {"fps": 59.9, "worst": 24, "scale": 0.86, "hour": 18.2, "gl": 0}
+PASS place 行者 {"fps": 60, "worst": 23, "scale": 0.5, "hour": 18, "gl": 0}
+PASS still completes {"ms": 4470}
+PASS no GL error, context alive null
+PASS no script error []
+22/22

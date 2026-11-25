@@ -1,0 +1,38 @@
+{
+ "schema_version": 1,
+ "what": "从仓库的一份全新拷贝出发，重做三样东西，和发布的成品比对",
+ "machine": {
+  "chip": "Apple M4 Pro",
+  "os": "macOS 26.6.2",
+  "chrome": "Google Chrome 158.0.8127.38",
+  "node": "v22.17.1",
+  "ffmpeg": "ffmpeg version 8.1.2"
+ },
+ "note": "渲染与比对在同一台机器上完成。换一种显卡，浮点与光栅化的差别会让 MD5 不同，画面应当一样；这一点没有验过。",
+ "checks": [
+  {
+   "name": "漫游页重新打包",
+   "command": "node tools/build_explore.mjs out/explore.html",
+   "expected_sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78",
+   "got_sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78",
+   "passed": true
+  },
+  {
+   "name": "快照 build_film/ 与现行 src/ 抽 18 帧对照",
+   "command": "node tools/same.mjs",
+   "identical": 18,
+   "of": 18,
+   "passed": true
+  },
+  {
+   "name": "4K 第 1152 至 1247 帧重渲，解码后逐帧 MD5 与成片母版的同一段相同",
+   "command": "node build_film/tools/render.mjs --w 3840 --h 2160 --spp 24 --from 1152 --to 1248 --dir \"$PWD/out/t4k\"",
+   "frames": 96,
+   "identical": 96,
+   "list": "reproduce_frames_1152_1247.md5",
+   "passed": true
+  }
+ ],
+ "passed": 3,
+ "total": 3
+}

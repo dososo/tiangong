@@ -1,0 +1,377 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-11-24T23:00:22Z",
+ "conclusion": "有条件达标",
+ "checks_passed": 447,
+ "checks_total": 447,
+ "sections": [
+  {
+   "key": "film_4k",
+   "name": "成片 4K 文件检查（ffmpeg 解码）",
+   "evidence": "evidence/film_4k.json",
+   "passed": 16,
+   "total": 16,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "26f3413aef5cb076eda5da7c2af06cfcdbd00bd703d03cc04f143de086ad1074"
+  },
+  {
+   "key": "film_1080p",
+   "name": "成片 1080p 文件检查（ffmpeg 解码）",
+   "evidence": "evidence/film_1080p.json",
+   "passed": 16,
+   "total": 16,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "b9b0b811bfac9aab3530bf2e466ba94e0ce84ec36e483cc2ef36f054b4b31b38"
+  },
+  {
+   "key": "avf_4k",
+   "name": "成片 4K 由苹果 AVFoundation 逐帧解码",
+   "evidence": "evidence/avfoundation_4k.json",
+   "passed": 8,
+   "total": 8,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "26f3413aef5cb076eda5da7c2af06cfcdbd00bd703d03cc04f143de086ad1074"
+  },
+  {
+   "key": "avf_1080p",
+   "name": "成片 1080p 由苹果 AVFoundation 逐帧解码",
+   "evidence": "evidence/avfoundation_1080p.json",
+   "passed": 8,
+   "total": 8,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "b9b0b811bfac9aab3530bf2e466ba94e0ce84ec36e483cc2ef36f054b4b31b38"
+  },
+  {
+   "key": "avf_preview",
+   "name": "手机预览版 720p 由苹果 AVFoundation 逐帧解码",
+   "evidence": "evidence/avfoundation_preview.json",
+   "passed": 8,
+   "total": 8,
+   "note": "体积压到 30 MiB 以内，画质有损，没有做编码损失检查",
+   "ok": true,
+   "bound_sha256": "c68fa5e9ed69d012769f014ce71a65db6c4c16a6e5e596a501781c8701d1aa43"
+  },
+  {
+   "key": "shown_4k",
+   "name": "成片 4K 屏上所见与审片画面一致（AVFoundation、Chrome 各 16 帧）",
+   "evidence": "evidence/shown_4k.json",
+   "passed": 4,
+   "total": 4,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "26f3413aef5cb076eda5da7c2af06cfcdbd00bd703d03cc04f143de086ad1074"
+  },
+  {
+   "key": "shown_1080p",
+   "name": "成片 1080p 屏上所见与审片画面一致（AVFoundation、Chrome 各 16 帧）",
+   "evidence": "evidence/shown_1080p.json",
+   "passed": 4,
+   "total": 4,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "b9b0b811bfac9aab3530bf2e466ba94e0ce84ec36e483cc2ef36f054b4b31b38"
+  },
+  {
+   "key": "vmaf_4k",
+   "name": "成片 4K 编码损失（VMAF，十八段，每镜都有）",
+   "evidence": "evidence/vmaf_4k.json",
+   "passed": 3,
+   "total": 3,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "26f3413aef5cb076eda5da7c2af06cfcdbd00bd703d03cc04f143de086ad1074"
+  },
+  {
+   "key": "vmaf_1080p",
+   "name": "成片 1080p 编码损失（VMAF，十八段，每镜都有）",
+   "evidence": "evidence/vmaf_1080p.json",
+   "passed": 3,
+   "total": 3,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "b9b0b811bfac9aab3530bf2e466ba94e0ce84ec36e483cc2ef36f054b4b31b38"
+  },
+  {
+   "key": "film_source",
+   "name": "成片源码快照与哈希清单一致",
+   "evidence": "evidence/film_source_sha256.txt",
+   "passed": 36,
+   "total": 36,
+   "note": "首版开拍时的清单是 `evidence/film_source_sha256_v1.txt`，两版只差 `film.js` 一处（门）",
+   "ok": true
+  },
+  {
+   "key": "film_doors",
+   "name": "改门之后没有重渲的部分与首版逐帧一致（35 秒起抽 157 帧，逐字节）",
+   "evidence": "evidence/film_doors.json",
+   "passed": 157,
+   "total": 157,
+   "note": "首版在「门开」之前就把南天门画成开着，前后接不上；改后重渲第 0–863 帧，对照组确认改动只出现在 35 秒之前",
+   "ok": true
+  },
+  {
+   "key": "film_doors_4k",
+   "name": "两次 4K 渲染逐帧对照（第 0–863 帧解码后 MD5：没有门的帧应完全相同）",
+   "evidence": "evidence/film_doors_4k.json",
+   "passed": 4,
+   "total": 4,
+   "note": "两次渲染相隔数小时；B1 前段、B2 全部相同，证明同一帧号画出同一张图",
+   "ok": true
+  },
+  {
+   "key": "film_same",
+   "name": "现行源码与成片快照逐帧一致（抽 18 帧，逐字节）",
+   "evidence": "evidence/film_same.json",
+   "passed": 18,
+   "total": 18,
+   "note": "",
+   "ok": true
+  },
+  {
+   "key": "bells",
+   "name": "三十三声钟与三十三重天逐重对齐",
+   "evidence": "evidence/bells.json",
+   "passed": 5,
+   "total": 5,
+   "note": "",
+   "ok": true
+  },
+  {
+   "key": "audio",
+   "name": "配乐母带机器检查（直流、声道平衡、单声道兼容、相位、咔哒声、闭眼后的静默）",
+   "evidence": "evidence/audio.json",
+   "passed": 10,
+   "total": 10,
+   "note": "不代替人耳",
+   "ok": true,
+   "bound_sha256": "e27d4af42d6de3b1fd00663072d9b1b22df577c3d93be1f17636caf88167109a"
+  },
+  {
+   "key": "captions",
+   "name": "字幕逐字出处",
+   "evidence": "evidence/captions_check.json",
+   "passed": 13,
+   "total": 13,
+   "note": "",
+   "ok": true
+  },
+  {
+   "key": "explore",
+   "name": "漫游页交互（真实鼠标键盘）",
+   "evidence": "evidence/explore_results.json",
+   "passed": 61,
+   "total": 61,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78"
+  },
+  {
+   "key": "perf",
+   "name": "漫游页帧率（Chrome，十五处，≥58 帧且最慢一帧 ≤34 ms）",
+   "evidence": "evidence/explore_perf.json",
+   "passed": 15,
+   "total": 15,
+   "note": "最低 60.1 帧，最慢一帧 16.8 ms",
+   "ok": true,
+   "bound_sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78"
+  },
+  {
+   "key": "pace",
+   "name": "漫游页在不同刷新率下的节拍（模拟显示器）",
+   "evidence": "evidence/explore_pace.json",
+   "passed": 8,
+   "total": 8,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78"
+  },
+  {
+   "key": "webkit",
+   "name": "漫游页 WebKit（Safari 内核）",
+   "evidence": "evidence/webkit.json",
+   "passed": 22,
+   "total": 22,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78"
+  },
+  {
+   "key": "ios",
+   "name": "漫游页 iPhone 模拟器 Safari",
+   "evidence": "evidence/ios_sim.json",
+   "passed": 15,
+   "total": 15,
+   "note": "模拟器用的是本机显卡，不能代表真机帧率",
+   "ok": true,
+   "bound_sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78"
+  },
+  {
+   "key": "frame",
+   "name": "漫游页放进受限框架（发布环境的替身）",
+   "evidence": "evidence/frame_test.json",
+   "passed": 13,
+   "total": 13,
+   "note": "",
+   "ok": true,
+   "bound_sha256": "07e26a1a01e6dc25c95ec36fe9f4a480de9217f4e247d2a1b784781e86b32147"
+  }
+ ],
+ "deliverables": [
+  {
+   "path": "delivery/stills/01_A_初登上界.jpg",
+   "bytes": 2026457,
+   "sha256": "348e72e2dd113fdfa8b259c7d92a8f58c98415190465dbda3d40d9e35549d718"
+  },
+  {
+   "path": "delivery/stills/02_B1_龙柱晨光.jpg",
+   "bytes": 2014174,
+   "sha256": "c1ac3bfde864bbb76d6a76e9831d103f99cd0b907e284a7b9df242d32ed95616"
+  },
+  {
+   "path": "delivery/stills/03_B2_赤须龙.jpg",
+   "bytes": 2427613,
+   "sha256": "2956f6445cd7083e0e67bb064a5e8e7c23d8150979f704607bdcd10e11a7b775"
+  },
+  {
+   "path": "delivery/stills/04_B3_南天门.jpg",
+   "bytes": 3565550,
+   "sha256": "910dafc0f77c4407480b39404d780020982b7abe8bdfadb7db4c639bdec92338"
+  },
+  {
+   "path": "delivery/stills/05_C_门开.jpg",
+   "bytes": 2794352,
+   "sha256": "73cc8fe25e12ff39d48f1b2a8855a87a0e3e31991280ad9e04cb44bd63bd920f"
+  },
+  {
+   "path": "delivery/stills/06_D_金碧.jpg",
+   "bytes": 2300305,
+   "sha256": "39afeefa52b698273311d5acfdb9b7e3a759e57cc498756b15426eb35a039a33"
+  },
+  {
+   "path": "delivery/stills/07_D_三十三座天宫.jpg",
+   "bytes": 2380468,
+   "sha256": "1aad77f4782c983977a466bf39f0dc7cf68f7aa025bd71aa89069b833bded38a"
+  },
+  {
+   "path": "delivery/stills/08_D_青绿.jpg",
+   "bytes": 2929319,
+   "sha256": "09e5e52c5dee8495a2d6c2d143067c82a4bc6ac986c9ea8d008a5c91543671fa"
+  },
+  {
+   "path": "delivery/stills/09_E1_复道回廊.jpg",
+   "bytes": 4047641,
+   "sha256": "2585ef1a6a39fc9e3304333ff5bd5370eba001d918f758d8a0db0abbafe79e0c"
+  },
+  {
+   "path": "delivery/stills/10_E2_龙凤翱翔.jpg",
+   "bytes": 2748643,
+   "sha256": "57136a770a40f275a151ee8cfa1baba23439e920255ec651e35b0e7327a11ccc"
+  },
+  {
+   "path": "delivery/stills/11_E3_飞天.jpg",
+   "bytes": 2321850,
+   "sha256": "e1db247fed560fe4c898145bc0c720a3063e8461744daeaaac3ed2e965bcaa69"
+  },
+  {
+   "path": "delivery/stills/12_F1_金乌着底飞.jpg",
+   "bytes": 2252333,
+   "sha256": "2ddc3917c0ad7cf24b65c733d0aa9e3faccf94a2f2ab4dd5789a4b10860e5a95"
+  },
+  {
+   "path": "delivery/stills/13_F2_玉兔坛边过.jpg",
+   "bytes": 2610970,
+   "sha256": "b1a6a33404b3841d235a312c9b2943dd631da00c2023316a6753f4ec78b786e2"
+  },
+  {
+   "path": "delivery/stills/14_G1_丹墀.jpg",
+   "bytes": 3156164,
+   "sha256": "ecd4ebde185ecd0ff53f5ca947553668ad4cd2bb0fadefeb42f999d57574be52"
+  },
+  {
+   "path": "delivery/stills/15_G2_万圣朝王.jpg",
+   "bytes": 2515357,
+   "sha256": "fbe7fce8d739b6cced6a913026a2867243e7dc96220ab91867f87fba6f136bd4"
+  },
+  {
+   "path": "delivery/stills/16_H_仰观藻井.jpg",
+   "bytes": 2694993,
+   "sha256": "24565a636dc20e4f3c24f1ba60f35782a06a3a24e2f3055e433ed9026933fa88"
+  },
+  {
+   "path": "delivery/stills/17_H_三十三重天.jpg",
+   "bytes": 2351563,
+   "sha256": "32d5b9be78490db9c2577bac7425fff18922f9f02195063f3e3a6463bb2656d3"
+  },
+  {
+   "path": "delivery/stills/18_H_俯观曼荼罗.jpg",
+   "bytes": 2667536,
+   "sha256": "b006e5a9a973d23ef870de706c656ed79220fa88c3cdf1cf73023bd7f03ba0b8"
+  },
+  {
+   "path": "delivery/stills/19_I_芥子须弥.jpg",
+   "bytes": 3686315,
+   "sha256": "2c669eb7e33c9e5e9285900b11aa1d13474a5071ed61036596e1a41b4c3a42c3"
+  },
+  {
+   "path": "delivery/stills/20_I_金睛.jpg",
+   "bytes": 4672092,
+   "sha256": "3b3b89601bc3faa68b7fa43fd48360ea5ee9d2444c81f7a32b4096e117982025"
+  },
+  {
+   "path": "delivery/stills/21_J_天宫.jpg",
+   "bytes": 2659568,
+   "sha256": "dc5277fef51801de70595315057da3a114f240a4f90566e01853ffa8671bb0b1"
+  },
+  {
+   "path": "delivery/tiangong_1080p.mp4",
+   "bytes": 398712166,
+   "sha256": "b9b0b811bfac9aab3530bf2e466ba94e0ce84ec36e483cc2ef36f054b4b31b38"
+  },
+  {
+   "path": "delivery/tiangong_4k.mp4",
+   "bytes": 847386928,
+   "sha256": "26f3413aef5cb076eda5da7c2af06cfcdbd00bd703d03cc04f143de086ad1074"
+  },
+  {
+   "path": "delivery/tiangong_explore.html",
+   "bytes": 2506370,
+   "sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78"
+  },
+  {
+   "path": "delivery/tiangong_preview_720p.mp4",
+   "bytes": 30328141,
+   "sha256": "c68fa5e9ed69d012769f014ce71a65db6c4c16a6e5e596a501781c8701d1aa43"
+  },
+  {
+   "path": "delivery/tiangong_score.m4a",
+   "bytes": 6755019,
+   "sha256": "7a7fc71db49a3bffc1558effd13461602e5b2f2015640772bcce1e2a7520b218"
+  }
+ ],
+ "blocked_env": [
+  "iPhone／iPad／安卓真机：帧率、发热、触控手感（只在 iPhone 模拟器里跑过）",
+  "真实 120 Hz 显示器（只用模拟节拍验过）",
+  "Firefox（本机没有装，未测）",
+  "低端显卡与 Windows（未测）",
+  "H.264／HEVC 在电视、投影、社交平台二次转码后的观感"
+ ],
+ "needs_human": [
+  "配乐没有经人耳监听（只有响度、真峰值、频谱与对位的机器验证）；定音鼓音高须人耳确认",
+  "色板按传统矿物颜料的通行色相设定，没有从真实文物图像采样",
+  "浑天仪、斗拱、藻井等形制按通行知识造型，没有逐件对照测绘图"
+ ],
+ "pending_agent": [],
+ "environment": {
+  "machine": "Apple M4 Pro, 14 cores, 24 GB",
+  "macos": "26.6.2",
+  "node": "v22.17.1",
+  "ffmpeg": "ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "python": "3.10.18",
+  "chrome": "158 (ANGLE Metal)",
+  "playwright": "1.58.0"
+ }
+}

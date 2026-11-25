@@ -1,0 +1,178 @@
+{
+ "schema_version": 1,
+ "file": "tiangong_4k.mp4",
+ "sha256": "26f3413aef5cb076eda5da7c2af06cfcdbd00bd703d03cc04f143de086ad1074",
+ "time": "2026-11-24T22:58:12Z",
+ "passed": 3,
+ "total": 3,
+ "checks": [
+  {
+   "name": "every window was compared frame by frame",
+   "passed": true,
+   "info": 18
+  },
+  {
+   "name": "VMAF mean of every window at or above 96",
+   "passed": true,
+   "info": {
+    "model": "vmaf_4k_v0.6.1",
+    "mean": 99.8,
+    "lowest_window": 98.81
+   }
+  },
+  {
+   "name": "no single frame under VMAF 93",
+   "passed": true,
+   "info": {
+    "frame_window": 100,
+    "vmaf": 97.65
+   }
+  }
+ ],
+ "rows": [
+  {
+   "frame": 100,
+   "frames": 24,
+   "vmaf": 98.99,
+   "vmaf_min": 97.65,
+   "psnr_y": 42.65,
+   "ssim": 0.9994
+  },
+  {
+   "frame": 240,
+   "frames": 24,
+   "vmaf": 98.81,
+   "vmaf_min": 98.25,
+   "psnr_y": 42.84,
+   "ssim": 0.9994
+  },
+  {
+   "frame": 490,
+   "frames": 24,
+   "vmaf": 99.99,
+   "vmaf_min": 99.7,
+   "psnr_y": 46.59,
+   "ssim": 0.9997
+  },
+  {
+   "frame": 600,
+   "frames": 24,
+   "vmaf": 100.0,
+   "vmaf_min": 100.0,
+   "psnr_y": 47.47,
+   "ssim": 0.9998
+  },
+  {
+   "frame": 730,
+   "frames": 24,
+   "vmaf": 99.96,
+   "vmaf_min": 99.07,
+   "psnr_y": 44.04,
+   "ssim": 0.9998
+  },
+  {
+   "frame": 1000,
+   "frames": 24,
+   "vmaf": 99.99,
+   "vmaf_min": 99.65,
+   "psnr_y": 45.15,
+   "ssim": 0.9997
+  },
+  {
+   "frame": 1300,
+   "frames": 24,
+   "vmaf": 99.97,
+   "vmaf_min": 99.66,
+   "psnr_y": 45.53,
+   "ssim": 0.9997
+  },
+  {
+   "frame": 1600,
+   "frames": 24,
+   "vmaf": 99.94,
+   "vmaf_min": 98.68,
+   "psnr_y": 43.94,
+   "ssim": 0.9997
+  },
+  {
+   "frame": 1760,
+   "frames": 24,
+   "vmaf": 99.99,
+   "vmaf_min": 99.66,
+   "psnr_y": 43.88,
+   "ssim": 0.9999
+  },
+  {
+   "frame": 1890,
+   "frames": 24,
+   "vmaf": 99.95,
+   "vmaf_min": 98.78,
+   "psnr_y": 44.99,
+   "ssim": 0.9997
+  },
+  {
+   "frame": 2030,
+   "frames": 24,
+   "vmaf": 99.98,
+   "vmaf_min": 99.44,
+   "psnr_y": 45.06,
+   "ssim": 0.9997
+  },
+  {
+   "frame": 2150,
+   "frames": 24,
+   "vmaf": 99.95,
+   "vmaf_min": 98.95,
+   "psnr_y": 45.48,
+   "ssim": 0.9996
+  },
+  {
+   "frame": 2400,
+   "frames": 24,
+   "vmaf": 99.84,
+   "vmaf_min": 99.65,
+   "psnr_y": 43.26,
+   "ssim": 0.9995
+  },
+  {
+   "frame": 2600,
+   "frames": 24,
+   "vmaf": 99.99,
+   "vmaf_min": 99.77,
+   "psnr_y": 44.57,
+   "ssim": 0.9997
+  },
+  {
+   "frame": 2800,
+   "frames": 24,
+   "vmaf": 99.61,
+   "vmaf_min": 98.85,
+   "psnr_y": 44.81,
+   "ssim": 0.9997
+  },
+  {
+   "frame": 3000,
+   "frames": 24,
+   "vmaf": 99.98,
+   "vmaf_min": 99.58,
+   "psnr_y": 45.55,
+   "ssim": 0.9997
+  },
+  {
+   "frame": 3520,
+   "frames": 24,
+   "vmaf": 99.98,
+   "vmaf_min": 99.41,
+   "psnr_y": 44.0,
+   "ssim": 0.9998
+  },
+  {
+   "frame": 3850,
+   "frames": 24,
+   "vmaf": 99.56,
+   "vmaf_min": 99.0,
+   "psnr_y": 45.37,
+   "ssim": 0.9997
+  }
+ ]
+}

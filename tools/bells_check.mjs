@@ -1,0 +1,15 @@
+// The thirty-three bells of the score against the thirty-three heavens of the film: node tools/bells_check.mjs [out.json]
+// Reads the camera height from build_film/src/film/shots.js, the tiers from build_film/src/world/stack.js and the stroke times from audio/score.py.
+import fs from 'node:fs'; import path from 'node:path'; import { clamp, lerp, easeIO } from '../build_film/src/core/math.js';
+const ROOT = path.resolve(path.dirname(decodeURIComponent(new URL(import.meta.url).pathname)), '..'); const rd = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
+const shots = rd('build_film/src/film/shots.js'); const hY = new Function('clamp', 'lerp', 'easeIO', 'return ' + /const hY = (.+?);\s*\n/s.exec(shots)[1].replace(/;$/, ''))(clamp, lerp, easeIO);
+const st = /STK\s*=\s*\{([^}]+)\}/.exec(rd('build_film/src/world/stack.js'))[1]; const STK = Object.fromEntries(st.split(',').map(x => x.split(':').map(y => y.trim())).filter(x => /^[\d.]+$/.test(x[1])).map(([k, v]) => [k, +v]));
+const score = rd('audio/score.py'); const bells = JSON.parse(/HEAVENS = (\[[^\]]+\])/.exec(score)[1]); const T0 = +/\bH=(\d+(?:\.\d+)?)/.exec(score)[1];
+let start = 0; for (const m of shots.matchAll(/shot\('(\w+)', ([\d.]+),/g)) { if (m[1] === 'H') break; start += +m[2]; }
+const out = []; const ok = (name, passed, info) => { out.push({ name, passed: !!passed, info }); console.log(passed ? 'PASS' : 'FAIL', name, JSON.stringify(info ?? '')); };
+ok('thirty-three tiers', STK.n === 33, STK); ok('thirty-three bells', bells.length === 33, bells.length); ok('the ascent starts at the same second in film and score', start === T0, [start, T0]);
+const cross = []; for (let i = 0; i < STK.n; i++) { const y = STK.y0 + i * STK.dy; let a = 0, b = 24; for (let k = 0; k < 60; k++) { const m = (a + b) / 2; hY(m) < y ? a = m : b = m; } cross.push(start + (a + b) / 2); }
+const diff = bells.map((t, i) => t - cross[i]); const off = diff.reduce((s, x) => s + x, 0) / diff.length; const worst = Math.max(...diff.map(x => Math.abs(x)));
+ok('every stroke falls within one frame (42 ms) of its crossing', worst <= 1 / 24, { worst_ms: Math.round(worst * 1000), mean_ms: Math.round(off * 1000) });
+const bl = /BL1, BL2 = ([\d.]+), ([\d.]+)/.exec(score).slice(1).map(Number); const i0 = start + 24; const eye = /const b = Math\.max\(bl\(([\d.]+),/.exec(shots)[1], close = /clamp\(\(u - ([\d.]+)\) \/ \.55\)/.exec(shots)[1]; ok('blink and closing eye match the score', Math.abs(i0 + +eye - bl[0]) < .05 && Math.abs(i0 + +close - bl[1]) < .05, { film: [i0 + +eye, i0 + +close], score: bl });
+const res = { schema_version: 1, time: new Date().toISOString(), passed: out.filter(x => x.passed).length, total: out.length, checks: out, rows: bells.map((t, i) => ({ heaven: i + 1, bell: t, crossing: +cross[i].toFixed(3) })) }; const p = path.resolve(ROOT, process.argv[2] || 'evidence/bells.json'); fs.writeFileSync(p + '.tmp', JSON.stringify(res, null, 1)); fs.renameSync(p + '.tmp', p); console.log(`${res.passed}/${res.total}`); process.exit(res.passed === res.total ? 0 : 1);

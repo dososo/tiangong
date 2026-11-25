@@ -1,0 +1,22 @@
+{'frame': 100, 'frames': 24, 'vmaf': 96.64, 'vmaf_min': 94.99, 'psnr_y': 46.49, 'ssim': 0.9991}
+{'frame': 240, 'frames': 24, 'vmaf': 96.24, 'vmaf_min': 95.5, 'psnr_y': 46.68, 'ssim': 0.9991}
+{'frame': 490, 'frames': 24, 'vmaf': 99.87, 'vmaf_min': 96.83, 'psnr_y': 47.34, 'ssim': 0.9994}
+{'frame': 600, 'frames': 24, 'vmaf': 99.81, 'vmaf_min': 97.13, 'psnr_y': 47.61, 'ssim': 0.9996}
+{'frame': 730, 'frames': 24, 'vmaf': 99.85, 'vmaf_min': 96.69, 'psnr_y': 43.49, 'ssim': 0.9994}
+{'frame': 1000, 'frames': 24, 'vmaf': 99.87, 'vmaf_min': 96.79, 'psnr_y': 44.7, 'ssim': 0.9993}
+{'frame': 1300, 'frames': 24, 'vmaf': 99.09, 'vmaf_min': 94.89, 'psnr_y': 46.76, 'ssim': 0.9993}
+{'frame': 1600, 'frames': 24, 'vmaf': 99.2, 'vmaf_min': 96.65, 'psnr_y': 44.97, 'ssim': 0.9994}
+{'frame': 1760, 'frames': 24, 'vmaf': 99.8, 'vmaf_min': 95.1, 'psnr_y': 42.87, 'ssim': 0.9996}
+{'frame': 1890, 'frames': 24, 'vmaf': 99.78, 'vmaf_min': 94.8, 'psnr_y': 45.53, 'ssim': 0.9994}
+{'frame': 2030, 'frames': 24, 'vmaf': 99.78, 'vmaf_min': 94.73, 'psnr_y': 46.34, 'ssim': 0.9994}
+{'frame': 2150, 'frames': 24, 'vmaf': 98.65, 'vmaf_min': 95.84, 'psnr_y': 47.63, 'ssim': 0.9992}
+{'frame': 2400, 'frames': 24, 'vmaf': 97.64, 'vmaf_min': 97.1, 'psnr_y': 45.37, 'ssim': 0.9992}
+{'frame': 2600, 'frames': 24, 'vmaf': 99.77, 'vmaf_min': 94.4, 'psnr_y': 44.46, 'ssim': 0.9993}
+{'frame': 2800, 'frames': 24, 'vmaf': 96.93, 'vmaf_min': 95.56, 'psnr_y': 46.46, 'ssim': 0.9994}
+{'frame': 3000, 'frames': 24, 'vmaf': 99.8, 'vmaf_min': 95.3, 'psnr_y': 45.79, 'ssim': 0.9993}
+{'frame': 3520, 'frames': 24, 'vmaf': 99.86, 'vmaf_min': 96.73, 'psnr_y': 44.9, 'ssim': 0.9995}
+{'frame': 3850, 'frames': 24, 'vmaf': 96.96, 'vmaf_min': 96.41, 'psnr_y': 47.62, 'ssim': 0.9995}
+PASS every window was compared frame by frame 18
+PASS VMAF mean of every window at or above 96 {"model": "vmaf_v0.6.1", "mean": 98.86, "lowest_window": 96.24}
+PASS no single frame under VMAF 93 {"frame_window": 2600, "vmaf": 94.4}
+3/3

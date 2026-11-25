@@ -1,0 +1,231 @@
+{
+ "schema_version": 1,
+ "page": "delivery/tiangong_explore.html",
+ "sha256": "8c7b2bd7af447fb5246e7567d10d354e96d86610051022aee9dff204c672fe78",
+ "what": "WKWebView, off-screen window under the desktop (the engine Safari uses); frame rate measured with requestAnimationFrame, no GPU timer in this engine",
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)",
+ "size": [
+  1200,
+  750,
+  2
+ ],
+ "out": [
+  2263,
+  1414
+ ],
+ "pace": {
+  "hz": 17,
+  "stride": 1,
+  "beat": 17
+ },
+ "run_at": "2026-11-24T16:28:06Z",
+ "passed": 22,
+ "total": 22,
+ "checks": [
+  {
+   "name": "page visible and built",
+   "passed": true,
+   "info": {
+    "ms": 3491,
+    "msg": "点灯"
+   }
+  },
+  {
+   "name": "entered",
+   "passed": true,
+   "info": null
+  },
+  {
+   "name": "sound running",
+   "passed": true,
+   "info": "running"
+  },
+  {
+   "name": "fifteen places",
+   "passed": true,
+   "info": 15
+  },
+  {
+   "name": "place 云海",
+   "passed": true,
+   "info": {
+    "fps": 56.7,
+    "worst": 37,
+    "scale": 0.72,
+    "hour": 6.17,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 南天门",
+   "passed": true,
+   "info": {
+    "fps": 59.3,
+    "worst": 26,
+    "scale": 0.72,
+    "hour": 6.4,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 龙柱",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "worst": 20,
+    "scale": 0.86,
+    "hour": 6.3,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 天门",
+   "passed": true,
+   "info": {
+    "fps": 59.9,
+    "worst": 22,
+    "scale": 0.6,
+    "hour": 9.5,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 长桥",
+   "passed": true,
+   "info": {
+    "fps": 60.1,
+    "worst": 23,
+    "scale": 0.5,
+    "hour": 14,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 回廊",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "worst": 20,
+    "scale": 0.86,
+    "hour": 8.2,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 丹墀",
+   "passed": true,
+   "info": {
+    "fps": 60.1,
+    "worst": 24,
+    "scale": 0.6,
+    "hour": 10,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 飞天",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "worst": 22,
+    "scale": 0.6,
+    "hour": 8.6,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 朝会",
+   "passed": true,
+   "info": {
+    "fps": 59.9,
+    "worst": 25,
+    "scale": 0.5,
+    "hour": 18,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 凌霄",
+   "passed": true,
+   "info": {
+    "fps": 56.4,
+    "worst": 24,
+    "scale": 0.6,
+    "hour": 18.1,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 日坛",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "worst": 19,
+    "scale": 0.86,
+    "hour": 20.8,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 月坛",
+   "passed": true,
+   "info": {
+    "fps": 60.2,
+    "worst": 25,
+    "scale": 0.72,
+    "hour": 21.6,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 仰观",
+   "passed": true,
+   "info": {
+    "fps": 59.5,
+    "worst": 28,
+    "scale": 0.6,
+    "hour": 18.2,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 俯观",
+   "passed": true,
+   "info": {
+    "fps": 59.9,
+    "worst": 24,
+    "scale": 0.86,
+    "hour": 18.2,
+    "gl": 0
+   }
+  },
+  {
+   "name": "place 行者",
+   "passed": true,
+   "info": {
+    "fps": 60,
+    "worst": 23,
+    "scale": 0.5,
+    "hour": 18,
+    "gl": 0
+   }
+  },
+  {
+   "name": "still completes",
+   "passed": true,
+   "info": {
+    "ms": 4470
+   }
+  },
+  {
+   "name": "no GL error, context alive",
+   "passed": true,
+   "info": null
+  },
+  {
+   "name": "no script error",
+   "passed": true,
+   "info": []
+  }
+ ]
+}

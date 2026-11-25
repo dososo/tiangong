@@ -1,0 +1,71 @@
+{
+ "schema_version": 1,
+ "time": "2026-11-24T22:31:36Z",
+ "passed": 4,
+ "total": 4,
+ "checks": [
+  {
+   "name": "B2 never shows the gate: all 120 frames identical",
+   "passed": true
+  },
+  {
+   "name": "the first 24 frames of C (gate shut in both): identical, or at most one predicted frame within 16 of 1023",
+   "passed": true
+  },
+  {
+   "name": "B1 until the gate comes into view: identical from its first frame on",
+   "passed": true
+  },
+  {
+   "name": "A and B3 show the gate: changed",
+   "passed": true
+  }
+ ],
+ "rows": [
+  {
+   "shot": "A",
+   "frames": 384,
+   "identical": 0,
+   "changed": [
+    0,
+    383
+   ]
+  },
+  {
+   "shot": "B1",
+   "frames": 168,
+   "identical": 131,
+   "changed": [
+    515,
+    551
+   ]
+  },
+  {
+   "shot": "B2",
+   "frames": 120,
+   "identical": 120,
+   "changed": []
+  },
+  {
+   "shot": "B3",
+   "frames": 168,
+   "identical": 0,
+   "changed": [
+    672,
+    839
+   ]
+  },
+  {
+   "shot": "C (first 24 frames)",
+   "frames": 24,
+   "identical": 23,
+   "changed": [
+    841,
+    841
+   ]
+  }
+ ],
+ "c_after_decoding_max_of_1023": {
+  "841": 13
+ }
+}

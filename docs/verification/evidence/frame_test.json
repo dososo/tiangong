@@ -1,0 +1,81 @@
+{
+ "schema_version": 1,
+ "page": "out/artifact/tiangong_explore.html",
+ "sha256": "07e26a1a01e6dc25c95ec36fe9f4a480de9217f4e247d2a1b784781e86b32147",
+ "time": "2026-11-24T16:48:13.770Z",
+ "note": "stand-in frame: sandbox without same-origin, strict CSP, stand-in for the host save capability",
+ "passed": 13,
+ "total": 13,
+ "checks": [
+  {
+   "name": "page builds inside the frame",
+   "passed": true
+  },
+  {
+   "name": "the frame is opaque (no storage, null origin)",
+   "passed": true
+  },
+  {
+   "name": "own fonts load",
+   "passed": true
+  },
+  {
+   "name": "enter",
+   "passed": true
+  },
+  {
+   "name": "sound runs after the click",
+   "passed": true,
+   "info": "running"
+  },
+  {
+   "name": "a place can be chosen with the mouse",
+   "passed": true,
+   "info": "D"
+  },
+  {
+   "name": "a still finishes",
+   "passed": true
+  },
+  {
+   "name": "save is offered by the host",
+   "passed": true
+  },
+  {
+   "name": "the picture reaches the host as a PNG",
+   "passed": true,
+   "info": {
+    "filename": "天宫-未时.png",
+    "bytes": 1488840,
+    "head": [
+     137,
+     80,
+     78,
+     71,
+     13,
+     10,
+     26,
+     10
+    ]
+   }
+  },
+  {
+   "name": "back to the walk",
+   "passed": true
+  },
+  {
+   "name": "the page does not scroll",
+   "passed": true
+  },
+  {
+   "name": "nothing was refused by the content policy",
+   "passed": true,
+   "info": []
+  },
+  {
+   "name": "no script errors",
+   "passed": true,
+   "info": []
+  }
+ ]
+}

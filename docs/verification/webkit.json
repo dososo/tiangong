@@ -1,0 +1,146 @@
+{
+ "schema_version": 1,
+ "what": "the pages in WebKit, the engine of Safari",
+ "site": "http://localhost:8792/tiangong/",
+ "at": "2026-11-25T00:29:37Z",
+ "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)",
+ "system": "macOS 26.6.2",
+ "passed": 18,
+ "total": 18,
+ "checks": [
+  {
+   "name": "landing page 1280x800: no errors in the page",
+   "passed": true,
+   "info": ""
+  },
+  {
+   "name": "landing page 1280x800: both page typefaces are loaded",
+   "passed": true,
+   "info": [
+    "loaded",
+    "loaded"
+   ]
+  },
+  {
+   "name": "landing page 1280x800: every picture is drawn",
+   "passed": true,
+   "info": {
+    "pictures": 39,
+    "broken": []
+   }
+  },
+  {
+   "name": "landing page 1280x800: nothing is wider than the window",
+   "passed": true,
+   "info": [
+    1263,
+    1280
+   ]
+  },
+  {
+   "name": "landing page 1280x800: links to the palace and to the source",
+   "passed": true,
+   "info": 34
+  },
+  {
+   "name": "landing page 1280x800: the film plays",
+   "passed": true,
+   "info": {
+    "why": "",
+    "from": 0,
+    "to": 2.9941915833320496,
+    "size": [
+     1920,
+     1080
+    ],
+    "seconds": 168.022,
+    "picked": "tiangong-1080p-hevc.mp4"
+   }
+  },
+  {
+   "name": "landing page 1280x800: the film can be dragged to 1:40 and goes on",
+   "passed": true,
+   "info": 102.50054541633632
+  },
+  {
+   "name": "landing page 1280x800: its picture is not black",
+   "passed": true,
+   "info": 99.00130208333333
+  },
+  {
+   "name": "landing page 390x844: no errors in the page",
+   "passed": true,
+   "info": ""
+  },
+  {
+   "name": "landing page 390x844: both page typefaces are loaded",
+   "passed": true,
+   "info": [
+    "loaded",
+    "loaded"
+   ]
+  },
+  {
+   "name": "landing page 390x844: every picture is drawn",
+   "passed": true,
+   "info": {
+    "pictures": 39,
+    "broken": []
+   }
+  },
+  {
+   "name": "landing page 390x844: nothing is wider than the window",
+   "passed": true,
+   "info": [
+    373,
+    390
+   ]
+  },
+  {
+   "name": "landing page 390x844: links to the palace and to the source",
+   "passed": true,
+   "info": 34
+  },
+  {
+   "name": "landing page 390x844: the film plays",
+   "passed": true,
+   "info": {
+    "why": "",
+    "from": 0,
+    "to": 2.996182500001356,
+    "size": [
+     1920,
+     1080
+    ],
+    "seconds": 168.022,
+    "picked": "tiangong-1080p-hevc.mp4"
+   }
+  },
+  {
+   "name": "landing page 390x844: the film can be dragged to 1:40 and goes on",
+   "passed": true,
+   "info": 102.50182879167751
+  },
+  {
+   "name": "landing page 390x844: its picture is not black",
+   "passed": true,
+   "info": 99.00130208333333
+  },
+  {
+   "name": "palace: no errors in the page",
+   "passed": true,
+   "info": ""
+  },
+  {
+   "name": "palace: every shader compiles, the lamps are lit, WebGL reports no error",
+   "passed": true,
+   "info": {
+    "ready": true,
+    "ms": 3467,
+    "msg": "点灯",
+    "gl": "WebGL 2.0",
+    "err0": 0
+   }
+  }
+ ]
+}

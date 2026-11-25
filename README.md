@@ -144,7 +144,7 @@ node tools/site_check.mjs
 
 核验日期 2026-11-24。
 
-代码、分镜与配乐由 Claude Code（Claude Opus 5.5）按一段委托文字完成，dososo 委托并定稿。
+代码、分镜与配乐由 Claude Code（Claude Opus 5.6）按一段委托文字完成，dososo 委托并定稿。
 
 ## 目录
 

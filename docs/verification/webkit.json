@@ -1,8 +1,8 @@
 {
  "schema_version": 1,
  "what": "the pages in WebKit, the engine of Safari",
- "site": "http://localhost:8793/tiangong/",
- "at": "2026-11-25T00:48:47Z",
+ "site": "https://dososo.github.io/tiangong/",
+ "at": "2026-11-25T00:50:18Z",
  "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)",
  "system": "macOS 26.6.2",
  "passed": 18,
@@ -48,7 +48,7 @@
    "info": {
     "why": "",
     "from": 0,
-    "to": 2.9957452913453926,
+    "to": 1.7144433743349266,
     "size": [
      1920,
      1080
@@ -60,7 +60,7 @@
   {
    "name": "landing page 1280x800: the film can be dragged to 1:40 and goes on",
    "passed": true,
-   "info": 102.50237554200504
+   "info": 102.50096629100875
   },
   {
    "name": "landing page 1280x800: its picture is not black",
@@ -107,7 +107,7 @@
    "info": {
     "why": "",
     "from": 0,
-    "to": 2.993335625329455,
+    "to": 1.6810395416656014,
     "size": [
      1920,
      1080
@@ -119,7 +119,7 @@
   {
    "name": "landing page 390x844: the film can be dragged to 1:40 and goes on",
    "passed": true,
-   "info": 102.50125908332905
+   "info": 102.50119458300878
   },
   {
    "name": "landing page 390x844: its picture is not black",
@@ -136,7 +136,7 @@
    "passed": true,
    "info": {
     "ready": true,
-    "ms": 3393,
+    "ms": 3337,
     "msg": "点灯",
     "gl": "WebGL 2.0",
     "err0": 0

@@ -176,4 +176,4 @@ Apache-2.0，见 [LICENSE](LICENSE)。
 
 ## In English
 
-A 168-second 4K film and a walkable palace, both drawn by the same code. The subject is the Heavenly Palace of *Journey to the West*, chapter 4, as the Monkey King sees it for the first time. Raw WebGL2, no 3D engine, no models, no textures, no image files, no generative image or video model. Every caption is a line from the book. [Watch and walk in](https://dososo.github.io/tiangong/). Apache-2.0; the score uses CC BY 4.0 samples credited in [NOTICE](NOTICE).
+A 168-second 4K film and a walkable palace, both drawn by the same code. The subject is the Heavenly Palace of *Journey to the West*, chapter 4, as the Monkey King sees it for the first time. Raw WebGL2: no 3D engine, no model, texture or image files, no generative image or video model. Every caption is a line from the book. [Watch and walk in](https://dososo.github.io/tiangong/). Apache-2.0; the score uses CC BY 4.0 samples credited in [NOTICE](NOTICE).
